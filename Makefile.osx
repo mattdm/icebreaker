@@ -1,0 +1,36 @@
+CC=gcc
+
+SDLCONFIG=sdl-config
+
+ifndef datadir
+  datadir=.
+endif
+
+ifndef highscoredir
+  highscoredir=.
+endif
+
+
+CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)\" -DHISCOREPREFIX=\"$(highscoredir)\"
+
+SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
+    level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
+    menu.c options.c fullscreen.c themes.c event.c titlebar.c benchmark.c \
+    misc.c lock.c delay.c
+
+SDL_MIXER=-lSDL_mixer
+SDL_LIB=$(SDL_MIXER) $(SDL_LDFLAGS)
+SDL_CFLAGS := $(shell $(SDLCONFIG) --cflags)
+SDL_LDFLAGS := $(shell $(SDLCONFIG) --libs)
+
+all:	icebreaker
+
+icebreaker:	$(SRC:.c=.o)
+	$(CC) $(CFLAGS) $^ -o icebreaker $(SDL_LIB)
+
+%.d: %.c
+	set -e; $(CC) -M $(CFLAGS) $< \
+           | sed 's/\($*\)\.o[ :]*/\1.o $@ : /g' > $@; \
+           [ -s $@ ] || rm -f $@
+
+include $(SRC:.c=.d)

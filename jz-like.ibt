@@ -1,0 +1,19 @@
+Background		 32   32   32
+NormalText		255  255  255
+BoardFillMin		192  192  192
+BoardFillMax		192  192  192
+Gridline		128  128  128 
+GridHighlight           255  255  255
+Line1			192    0    0
+Line2			  0    0  192
+MenuHighlight		192  192  192
+GameoverText		192    0   64
+ScorescrollText		  0    0  192
+BonusscrollText		192    0   64
+TextentryBox		192  192  192
+TextentryText		  0    0    0
+CopyrightText		192  192  192
+SpriteTransparent	  0    0  255
+SpriteBitmap		atom.bmp
+SoundOuch		pop.wav
+SoundCrash		drum.wav

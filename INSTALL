@@ -1,0 +1,11 @@
+The easiest way to install this is via RPM. If the binary RPM doesn't work
+on your system, or you don't trust it, just download the src.rpm and rebuild
+it. (If you've never done that before, don't worry -- it's actually
+amazingly easy -- just do "rpm --rebuild icebreaker.src.rpm".)
+
+You can of course also install from Plain Old Source. You should be able to
+just do "make", and then as root, "make install". You'll need the SDL
+libraries from <http://www.libsdl.org/>, if you don't have them already.
+
+Note that if you don't have the data files in the right place ("make
+install" should do it), the game will crash ignominiously on startup.

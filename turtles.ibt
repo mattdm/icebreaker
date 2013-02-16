@@ -1,0 +1,19 @@
+Background		  0  128   64
+NormalText		255  255  255
+BoardFillMin		  0    0  128
+BoardFillMax		  0   32  192
+Gridline		  0    0  160
+GridHighlight             0    0   96
+Line1			128   32    0
+Line2			192  192    0
+MenuHighlight		255  255  255
+GameoverText		128   32    0
+ScorescrollText		192  192    0
+BonusscrollText		128   32    0
+TextentryBox		  0    0    0
+TextentryText		255  255  255
+CopyrightText		192  192  192
+SpriteTransparent	  0    0  128
+SpriteBitmap		turtle.bmp
+SoundOuch		ouch.wav
+SoundCrash		splash.wav

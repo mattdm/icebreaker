@@ -1,0 +1,158 @@
+WHAT:
+  
+  So, uh, there's a bunch of penguins on an iceberg in Antarctica. You have
+  been selected to catch them so they can be shipped to Finland, where they
+  are essential to a secret plot for world domination.
+
+  In order to trap the penguins, you'll need to break the iceberg into small
+  chunks. (They're afraid of water, for no apparent reason. Ah well. "The
+  Matrix" had more plot holes than this, and it still was a hit.) You do
+  this by melting lines in the ice with Special High-Tech GNU Tools.
+
+  If a penguin hits a line in progress, however, it vanishes with a loud
+  noise, and you lose a life. (Yes, a life. This story is really breaking
+  down, isn't it? But never fear -- I'll keep going until it's completely
+  dead.)
+
+  Once 80% or more of the iceberg is gone, the remaining chunks are small
+  enough for shipping. Of course, if you manage to get rid of more than
+  that, you'll save on postage, thus earning you exponential amounts of Geek
+  Cred (a.k.a. "score").
+
+  After you ship off one batch of penguins, it's time to move on to the
+  next. Each subsequent 'berg will have one more penguin, and you'll have
+  one more life. This will continue until you lose, or until you exceed
+  level one hundred or so, which Ain't Gonna Happen. 
+
+  Of course, this is an urgent mission, so you'll be penalized if you're
+  slow -- every second or so, your score drops down by one. But don't worry,
+  I'm not completely cruel, so any points you earn on one level are yours to
+  keep forever, no matter how long you take on subsequent icebergs.
+
+  As far as I can tell, this makes no narrative sense whatsoever, so at this
+  point, I declare the backstory / game metaphor completely collapsed. Just
+  go play.
+
+
+HOW:
+
+  The left mouse button starts drawing lines; the right (and/or middle)
+  button toggles between making vertical and horizontal lines.  Note that
+  left clicking actually starts *two* lines: either up and down or left and
+  right. (This will make plenty of sense when you're actually playing.) If
+  one of these lines is hit before it reaches the edge of the iceberg,
+  you'll lose a life. If both are hit, you'll lose two lives.
+
+  As a tiny bit of grace, if you click directly on a penguin, it'll say
+  "Ouch" and nothing else will happen.
+
+  Once a line is completed, any area containing no penguins is cleared.
+  Falls into the ocean, so to speak. Once 80% has been cleared, the level is
+  complete. However, you get an exponential bonus for every percentage point
+  above that, so you want to try to make your last line suddenly clear a
+  huge chunk of ice. (Again, this will make sense once you've played for a
+  while.) Oh, and you also get a (much smaller) bonus for having lives left
+  over at the end of a level.
+
+  Taking a long time on a level doesn't affect these bonuses, but it can
+  chip away at your score, so you have to balance the time it takes to set
+  up a situation where you can clear 99% of the iceberg against the bonus
+  you'll get for doing so.
+
+  Having trouble? A hint: it's useful to make traps by intentionally letting
+  some of your lines get broken. That way, you can create smaller areas in
+  which you can catch the pesky little things easily.
+
+
+WHY:
+
+  There's a game for MS Windows called "Jezzball". You may notice that this
+  one is extremely similar. There's a reason for that. See, our main
+  computer at home runs Linux most of the time, but it has Win95 set up to
+  dual-boot if need be. (Unfortunately, it's too slow to run VMware or Wine
+  well.) Ideally, of course, the machine stays in Linux, but my wife, Karen,
+  really likes puzzle sorts of games and became highly addicted to this
+  Jezzball thing. Well, we simply couldn't have the system wasting its life
+  in Windows all that time, so I took it upon myself to create a
+  sort-of-clone. (It's not a pure clone, because I like to think that I've
+  done many things in a far superior way.) So this game can be thought of,
+  in a simultaneously dangerously geeky and dangerously mushy way, as sort
+  of a dual love-letter, to both Karen and Linux. :)
+
+  It's therefore somewhat ironic that IceBreaker now exists in a MS 
+  Windows version. Ah well. I know not all of you have been converted yet,
+  and you might as well enjoy the game too.
+
+  Oh, and to answer another "Why" question, especially for my friend Lars:
+  why is this program written in C and yet uses C++ style comments? Because
+  I like C++ style comments, that's why.
+
+WHO:
+
+  This game was written by Matthew Miller <mattdm@mattdm.org>.
+
+  Recent versions have benefited immensely from the help of Enrico Tassi
+  <gareuselesinge@infinito.it>. He's responsible for getting the Win32 port
+  to work so nicely, and for a lot of fancy new features. Enrico doesn't
+  live here in Boston, but he's a huge fan of Boston band Letters To Cleo,
+  so that counts for something.
+
+  Much thanks to Karen for everything. In fact, if you really love this
+  game, check out Ten Thousand Villages <http://www.tenthousandvillages.org>,
+  the non-profit organization for which she works. And if you live near
+  Boston, MA, stop in to the store in Coolidge Corner (Brookline) and say
+  "Hi" and perhaps buy something -- they have cool stuff and it's a really
+  great organization.
+
+  Thanks also to Tae-Jin, for helping me squash a nasty bug, and to Paul for
+  testing and suggestions and proofreading this document. And to the folks
+  at the helpdesk downstairs for playing this game instead of working.
+
+  The sounds were either originally created or borrowed from freely-licensed
+  sources and modified heavily. Thanks to Wesley Crossman for his
+  contributions. I'd still like lots more cool good ones -- either
+  improvements of the existing sounds or for new themes.
+
+  The penguin image is mostly my own work, but is based on a graphic
+  from Pingus <http://dark.x.dtu.dk/~grumbel/pingus/>.
+
+  Actually, I'm quite open to accepting any help anyone wants to give.
+
+
+WHEN:
+
+  A week or two in September 2000, and then some more time in July 2001,
+  and then in May 2002, so on.
+
+
+WHERE:
+
+  Get it from: <http://www.mattdm.org/icebreaker/>
+  
+  Report bugs: <mattdm@mattdm.org>
+
+
+WHICH:
+
+  (As in, "On which libraries does icebreaker depend?")
+  
+  libSDL and libSDL_mixer. <http://www.libsdl.org/>
+
+
+WHITHER:
+
+  I'm now actively working on IceBreaker, and a few other people have been
+  too (most notably, Enrico Tassi). If you want to help, or are just
+  interested in what's going on, check out the development section of the
+  IceBreaker website at <http://www.mattdm.org/icebreaker/development.html>.
+
+
+------------------------------------------------------------------------------
+Copyright (C) 2000-2002 Matthew Miller and others and released under the
+terms of the GNU General Public License.
+
+This project uses the Simple DirectMedia Layer and SDL Mixer libraries which
+are available under the GNU LGPL license. SDL and SDL_mixer source code
+should be available from wherever you got IceBreaker; if you can't find it,
+it is available at <http://www.mattdm.org/icebreaker/> or at the main SDL 
+site <http://www.libsdl.org/>.

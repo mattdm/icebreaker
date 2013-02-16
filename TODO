@@ -1,0 +1,90 @@
+Some of this is work in progress, and some it is just stuff I'd like to see.
+Check out <http://www.mattdm.org/icebreaker/development.html> for details.
+
+* many (65 at last count) sections of the code are marked with "FIX", in
+  places where I know I did something messy, foolish, or inefficient.
+* there are likely other bits of messiness, foolishness, and inefficiency
+  which I haven't realized are there
+* this is part of the above, but bears mentioning separately: some of the
+  code is the product of late-night hacking and, while it works fine,
+  desperately needs cleaning up
+
+For 2.0:
+- make MacOS X port
+- have a dozen themes or more (currently at nine)
+
+For 2.2: (but sooner if we're lucky):
+- find and use user's home dir on WinNT/2k/XP
+- do something sensible if selected theme is invalid
+- make it so when both lines get broken exactly at once, the second sound
+  is played with a very slight delay so that the user gets audio
+  feedback that two lives were lost
+- make spaces-in-username work -- convert to/from some special character in 
+  high score file
+- make ctrl-q quit (or perhaps just q, with a confirm dialog)
+- check for high scores on 'quit' when in the midst of a game
+- option to turn off scrolling level-end text ("transitions = normal/fast")
+- more code cleanup in the event loops -- such big hairy functions....
+- "help" command line options redirected to files on win32 -- what to do
+  about that?
+- clean up intro -- remove stupid 'w' thing (either add ability to tell a 
+  line to kill itself after a certain length, or add code to the intro to
+  know when to kill which lines.)
+- make the program not crash if data files can't be found. (Of course, on
+  Win32, we're SOL without the SDL DLLs anyway.)
+- make help key (F1) work in intro
+- look for themes in an os-specific directory -- ~/.icebreaker on Linux
+  (which means migrating the current ~/.icebreaker to either ~/.icebreakerrc
+  or ~/.icebreaker/icebreakerrc) -- in addition to the standard directory.
+  on BeOS, this might mean looking in the same dir in which the executable
+  resides... need to check about that.
+- make man page version of themes help?
+- unbreak BeOS port (looking to be a pain, and let's face it, this is an
+  increasingly marginal platform. even the person who did the initial port
+  doesn't actually seem to run the OS very often....)
+- ability to use bitmaps for backgrounds
+- ability to use png instead of bmp -- use SDL_image.
+
+For 3.0:
+- add music courtesy of my brother Joel at Red Reactor Sound Studio 
+  <http://www.redreactor.com/> and intelligent (context-sensitive) music
+  system
+- that annoying "entire iceshelf collapses" bug is *still* there. happens
+  very very very very rarely, though, so I can't figure out what exactly
+  the problem is. probably something wrong with squarefill() or some other
+  part of checkempty() in grid.c. I tried changing a few things, but it's
+  hard to prove that the problem is solved when you can't recreate it....
+- there is a little bug where in certain situations you can start an
+  opposing line directly in the path of an oncoming line, causing lines 
+  which are essentially on top of each other. Not a terribly fatal flaw,
+  but still.
+- faster better smarter collision detection (not a change to be taken 
+  lightly since that's basically rewriting the core of the engine). this
+  will solve the two bugs above once and for all, and should
+  be a significant speed increase if done right. My goal is to make this 
+  play on acceptably on my Toshiba Libretto CT50 (pentium 75).
+- make option parsing a bit more flexible -- gnu getopt style
+- animated sprites
+- replace randomized "demo" with a real demo that at least follows the
+  rules -- and ideally plays a decent game. random semi-AI play would be
+  great; a recording mechanism of some sort is second-best
+- make playing area able to be a bitmap instead of just a colored grid
+  (maybe lines also)
+
+Possibly:
+- convert to C++ -- reduce global variables
+- have bonus Things which get you points (or change game mechanics) for
+  trapping with a single penguin. (in a small enough space?)
+- user-definable keys
+- internationalization - translations and fonts
+- move themes to a subdir
+  a) in the source tree
+  b) in the datadir?
+
+
+Probably never:
+- make GNOME/KDE versions?
+- Mac OS 9 port?
+- the animation is really jerky with some refresh rates. what to do about
+  this? last time I wrote a game was under DOS, and you could easily
+  sync to the vertical refresh.....

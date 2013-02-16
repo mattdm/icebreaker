@@ -1,0 +1,19 @@
+Background		 0     0   64
+NormalText		255  255  255
+BoardFillMin		  0    0    0
+BoardFillMax		 32   32   32
+Gridline		  0    0   32
+GridHighlight            96   96   96
+Line1			 96   96  128
+Line2			224  192    0
+MenuHighlight		255  255  255
+GameoverText		160  160  192
+ScorescrollText		224  192    0
+BonusscrollText		160  160  192
+TextentryBox		  0    0    0
+TextentryText		255  255  255
+CopyrightText		160  160  192
+SpriteTransparent	  0  0    0
+SpriteBitmap		star.bmp
+SoundOuch		nbwoanp.wav
+SoundCrash		scrunch.wav

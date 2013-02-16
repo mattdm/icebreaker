@@ -1,0 +1,20 @@
+Background		 80    0    0
+NormalText		255  255  255
+BoardFillMin		192  192  108
+BoardFillMax		255  255  128
+Gridline		255  255  128
+GridHighlight           255  255  192
+Line1			  0    0   96
+Line2			 64   64   64
+MenuHighlight		255  255  128
+GameoverText		  0    0  160
+ScorescrollText		  0    0    0
+BonusscrollText		  0    0  160
+TextentryBox		  0    0    0
+TextentryText		255  255  255
+CopyrightText		192  192  192
+SpriteTransparent	255  255  160
+SpriteBitmap		mouse.bmp
+SpriteMirrorBitmap	mouse-r.bmp
+SoundOuch		squeak.wav
+SoundCrash		scrunch.wav

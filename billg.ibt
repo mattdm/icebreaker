@@ -1,0 +1,19 @@
+Background		  0    0    0
+NormalText		250  207   32
+BoardFillMin		 94  126  252
+BoardFillMax		 94  126  252
+Gridline		 62   94  220
+GridHighlight           126  158  252
+Line1			254  122   33
+Line2			119  184    4
+MenuHighlight		119  184    4
+GameoverText		242  243  237
+ScorescrollText		255  204   51
+BonusscrollText		254  122   33
+TextentryBox		242  243  237
+TextentryText		  0    0    0
+CopyrightText		192  192  192
+SpriteTransparent	 94  126  252
+SpriteBitmap		billg.bmp
+SoundOuch		bgvvint.wav
+SoundCrash		bgeveryone.wav

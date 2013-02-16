@@ -1,0 +1,19 @@
+Background		  0   64    0
+NormalText		255  255  255
+BoardFillMin		 20  148   20
+BoardFillMax		 52  180   52
+Gridline		192  192  192
+GridHighlight           192  192  192
+Line1			192  192    0
+Line2			 96   32    0
+MenuHighlight		255  255  255
+GameoverText		192   64    0
+ScorescrollText		255  255    0
+BonusscrollText		255   85    0
+TextentryBox		  0    0    0
+TextentryText		 52  180   52
+SpriteTransparent	255    0    0
+CopyrightText		192  192  192
+SpriteBitmap		cow.bmp
+SoundOuch		moo.wav
+SoundCrash		splat.wav

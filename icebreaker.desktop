@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=IceBreaker
+Type=Application
+Comment=addictive action-puzzle game involving bouncing penguins
+Exec=icebreaker
+Icon=/usr/share/icebreaker/icebreaker_48.bmp
+Terminal=0

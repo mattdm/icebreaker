@@ -1,0 +1,78 @@
+.de Y
+.ft CW
+.in +4n
+.nf
+\&\\$1
+.ft
+.in
+.fi
+..
+.TH icebreaker 6 "v$VERSION: $VERDATE"
+.SH NAME
+icebreaker - An addictive action-puzzle game for X.
+.SH SYNOPSIS
+.B icebreaker
+.SH DESCRIPTION
+So, uh, there's a bunch of penguins on an iceberg in Antarctica. You
+have been selected to catch them so they can be shipped to Finland, where
+they are essential to a secret plot for world domination.
+.PP
+In order to trap the penguins, you'll need to break the iceberg into small
+chunks by melting lines without hitting any of the birds. Once 80% or more
+of the 'berg is gone, you advance to the next level.
+.PP
+Use the left mouse button to start lines, and the right (and/or middle)
+button to toggle between horizontal and vertical. Beyond that, it's probably
+easier for you go figure out the game by playing than by reading. So go.
+.PP
+Go!
+.SH OPTIONS
+.TP
+.B \-n, \-\-nosound
+do not attempt to initialize sound system. Causes the in-game Sound option to
+be marked N/A, and the config file setting to be ignored.
+.TP
+.B \-f, \-\-fullscreen
+start in fullscreen mode if possible. Ignores config file setting.
+.TP
+.B \-w, \-\-windowed
+start in windowed mode. Resets config file so that this is the default. You
+probably won't ever need to use this, but it's there in case
+fullscreen somehow is broken and you're too lazy to edit the config file
+manually.
+.TP
+\fB\-t\fIthemename\fP, \fB\--theme=\fIthemename\fP
+select theme \fIthemename\fR -- overrides config file. For more information
+on themes, see README.themes or the IceBreaker web site.
+.TP
+.B \-l, \-\-listthemes
+show available themes.
+.TP
+.B \-v, \-\-version
+display version and copyright information
+.TP
+.B \-h, \-\-help
+display simple command-line option help screen
+.SH FILES
+.TP 
+.I $HIGHSCOREDIRicebreaker.scores
+The system-wide list of high scores.
+.TP
+.I ~/.icebreaker
+The per-user options file; see comments in the file itself for more info.
+.SH BUGS
+See the included TODO file. And I'm sure there's a few that have slipped in
+without my knowledge. Please report anything you find to
+.IR mattdm@mattdm.org .
+
+.SH SEE ALSO
+There's an included README file. It's very clever. (I know because I wrote
+it.) And there's a web site at
+.IR http://www.mattdm.org/icebreaker/ .
+
+.SH COPYRIGHT
+icebreaker is Copyright (C) 2000-2002 Matthew Miller and released under the
+terms of the GNU General Public License.  See the documentation included with
+the program for more details.
+.SH AUTHOR
+Matthew Miller (mattdm@mattdm.org)

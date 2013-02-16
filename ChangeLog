@@ -1,0 +1,167 @@
+  - win32 version now uses registry for configuration options
+
+June 8, 2002: released 1.9.7
+  - game loop timing more precise -- now busy-waits if need be (but still
+    tries to sleep when possible). This will improve game speed on slower
+    systems.
+  - now sets initial username to that of logged-in user in win32, instead
+    of defaulting to "Nobody".
+  - username length can be whatever happens to fit the dialog (depends on
+    character width) instead of being limited to 12 regardless of size
+  - minor cleanup
+  - tweaking of theme sounds
+
+May 31, 2002: released 1.9.6
+  - decreased score factor in Easy mode. Don't be a wimp.
+  - changed sounds to 22050Hz -- this will allow better high-pitched effects
+  - changed default chunksize from 256 to 1024 -- this'll put alway the bad
+    sound-echo bug on some systems.
+  - minor memory leak cleanup in theme switching
+  - menu handler and dialog code cleanup
+  - right-clicking in options menu now cycles backwards, and right-clicking
+    on non-options menu items does nothing. scroll wheel cycles options
+  - arrow keys move around playing field
+  - keyboard now works in menu; other keyboard cleanup
+  - added a few new sounds
+  - beep (ouch, actually) on errors in high-score-name entry dialog
+
+May 27, 2002: released 1.9.5 (public beta)
+  - little bits of code cleanup
+  - slightly increase bonus for clearing more than 80 on higher levels to
+    help counteract the fact that having more penguins make that more and
+    more impossible
+
+May 26, 2002: released v1.9.4
+  - mouse cursor code cleanup
+  - made it so broken line sound doesn't play if that sound was last
+    started playing less than 30ms ago -- that way if two lines are broken
+    at once, the sound isn't double loud (but this still needs work --
+    proper behavior would be to play the sound with a slight delay)
+  - fixed race condition in readhiscore()/checkhiscore()/addhiscore() -- 
+    added file locking (thanks Enrico!)
+  - fixed memory leak in theme-sound-switching
+  - fixed draw bug in autopause mode
+  - no gameover if game is terminated/restarted before you've done anything
+  - added confirm dialog for changing difficulty level
+  - cleanup in dialog.c -- theme switching code now not quite so ugly
+    (redraw bug when both theme and difficulty were changed)
+  - added NSIS install script to generate Win32 installer. See:
+    <http://www.nullsoft.com/free/nsis/>. It's open source software, but as
+    far as I can tell there's no native Linux version yet. Luckily, runs
+    under Wine. If anyone knows of a port, let me know.
+  - mucking with some makefile stuff to make it easier to build on OS X or
+    BeOS. More to come on that front.
+
+May 23, 2002: released v1.9.3
+  - -b option for benchmark mode (will be disabled in stable releases).
+  - added command line options for themes
+  - added README.themes
+  - moved some of the stuff from the event loop in the main level function to
+    helper functions. It's still pretty ugly, but this tiny bit of cleanup
+    made it much easier to do the next thing on this list:
+  - added basic keyboard support:
+     * ESC to exit full-screen mode and to cancel menus.
+     * SPACE or X or . for toggle direction
+     * ENTER or Z or , for start lines
+  - made srandom use pid in addition to current time -- wouldn't want to 
+    have the exact same game twice at once
+  - tweaked makefile for better cross-compiling and dist. package generation
+  - fixed fullscreen command-line option for case when config file doesn't
+    exist (and made the code better in the process)
+  - special "random" theme that actually causes theme to be chosen at random
+  - you can now define a "mirror" sprite to provide different images
+    depending on left/right direction 
+  - BeOS compatibility stuff -- should be mostly un-broken now
+
+May 19, 2002: released v1.9.2
+  - added command-line options for sound, fullscreen mode, help, and version
+  - more themes! 
+  - made 'gridhighlight' for themes, allowing pseudo-3d (button-style)
+    blocks
+  - full-screen mode now actually 640x480. This should make it work on 
+    more platforms, and gives us a place to put a titlebar showing the
+    current level
+  - added erasepenguin routine -- fix some leaking surfaces
+  - improved text-handling routines -- scores in the transitions between
+    levels and at the end of the game are now centered properly, and the
+    highscore scroller at the beginning is done much more nicely
+
+
+May 16, 2002: released v1.9.1
+  - first cut at themes
+  - lack of object-oriented design forced me to create more global
+    variables. someday in the far future, this will become a C++ project.
+  - now can coexist with Winamp on win32 -- not sure if this is because
+    of fixes in SDL 1.2.4, or in the Winamp 2.80. It wasn't anything I did,
+    but hey, now you can listen to music while you play.
+  - linked against much smaller version of SDL_mixer DLL for win32 --
+    should cut the distribution archive in half or better.
+  - cleanup in the transition screen routines
+  - kludge around broken _snprintf in mingw32 -- cures potential overflow
+  - minor cleanup in the text routines
+
+
+August 30, 2001: released v1.9.0
+  - no significant changes; just starting new devel branch
+
+July 30, 2001: released v1.2.1
+  - fixed minor bug where highest-score line cut off letters that dip below
+    the baseline (gjpqy...). Thanks to Jonathan DePrizio for catching this.
+  - tiny little bugfixes, makefile cleanup
+  - switched to much more sensible linux-kernel-style numbering scheme.
+    (n.oddnumber.n for development releases, and n.evenumber.n for
+    stable "production" releases -- for example, 1.2.1 is a stable release,
+    so any excitement/surprises should come from the game, not from
+    bugs. 1.9.0 will be a devel release, and some features may not work
+    completely, or at all.)
+
+July 28, 2001: released v1.2
+  - added "score decay" timer, to discourage obsessive-compulsive types from
+    taking hours on one level. Sure, I want you to be obsessed with the
+    game, but have fun playing, not tediously waiting. :)
+  - added easy and hard difficulty settings
+  - added options for sound
+  - added option for auto pause (which makes the game stop when the window
+    loses focus -- note that it always pauses when minimized regardless of
+    this setting).
+  - now, when a line is stuck (against another line) for a long time,
+    the line completes instead of exploding. ("A long time" == approximately
+    5 seconds)
+  - merged in Enrico Tassi's win32 compatibility stuff -- win32 version
+    is now completely functional, except:
+  - added fullscreen option! (Unfortunately, still has problems in Win32,
+    so you'll have to edit the icebreaker.cfg manually if you want to enable
+    this feature on a MS Windows system. I'll get the problem figured out
+    for a future release.)
+  - fixed busy waits in dialog.c (thanks again to Enrico)
+  - code cleanup
+
+July 23, 2001: released v1.1
+  - added man page
+  - tiny change to error message when high score file can't be read
+
+July 18, 2001: released v1.09
+  - Gameplay change: changed behavior when a line hits another
+    partially-completed line -- now, instead of the line completing
+    successfully, it waits until the other completes or is destroyed.  In
+    the event that neither of those happens after a little while, new line
+    dies. (I've considered making it complete successfully in this case;
+    opinions, anyone?) This change makes the game much harder, in a good way.
+  - moved center of vertical cursor to proper location (oops)
+  - modified high score code to reread from disk, so that multiple players
+    on the same system don't cause confusion. A race condition still exists,
+    but it's much narrower. :) A future version will have proper locking.
+  - include fix for cmpscore bug thanks to Enrico Tassi
+
+October 5, 2000: released v1.0
+  - one-point-oh!
+
+October 3, 2000: released v0.995
+  - minor cosmetic fixes
+  - made 'make install' work; made it easier to redefine file locations
+  - made it so three-decimal-place version numbers work :)
+  - made level 100 loop forever instead of just ending the game there. 
+    not that level 100 is any fun, really -- too many penguins!
+
+October 2, 2000: released v0.98
+  - first public release

@@ -1,0 +1,19 @@
+Background		255  102  153
+NormalText		255  255  255
+BoardFillMin		224  224  224
+BoardFillMax		255  255  255
+Gridline		192  192  192
+GridHighlight           255  255  255
+Line1			164  196  225
+Line2			255  168  255
+MenuHighlight		255  255  255
+GameoverText		255  204   51
+ScorescrollText		 96   96  255
+BonusscrollText		255  204   51
+TextentryBox		 96   96  255
+TextentryText		255  204   51
+CopyrightText		255  204   51
+SpriteTransparent	  0  255    0
+SpriteBitmap		kitty.bmp
+SoundOuch		ewww.wav
+SoundCrash		pop.wav
