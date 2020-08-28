@@ -7,7 +7,9 @@ So I can get this into Fedora so Neal can stop being disappointed in me.
 2. Get rid of this-is-fine-for-the-1990s setguid games thing.
 3. Update the spec file to modern standards.
 4. Update the readme file for the current decade.
-5. Just go ahead and call it 2.0.0.
+5. Either disable fullscreen mode or figure out how to not actually change
+   the resolution to 640×480, which causes my monitor to freeze in disbelief.
+6. Just go ahead and call it 2.0.0.
 
 Also, there's a performance optimization I made which either created or the
 "collapsing iceberg" bug (see below). I bet with computers being several
@@ -20,7 +22,8 @@ Good ideas after that
 ---------------------
 
 1. Update to SDL2.
-2. Find someone to update for Windows and Mac.
+2. Integer-scaled 2x and 3x window sizes for modern screen resolutions.
+3. Find someone to update for Windows and Mac.
 
 Below this, find the _previous_ todo list, circa 2003. Some of these are
 still good ideas. Other parts, like the BeOS port, can probably be dropped.
