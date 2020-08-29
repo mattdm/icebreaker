@@ -56,8 +56,8 @@ ifneq ($(VERSION),$(shell awk '/^Version:/ { print $$2 }' icebreaker.spec))
   $(error Version in spec file doesn't match version in icebreaker.h! )
 endif
 
-RPMRELEASE := $(shell awk '/^\Release:/ { print $$2 }' icebreaker.spec)
-PRERELEASE := $(shell awk '/^\Release:/ { print $$2 }' icebreaker.spec | grep pre)
+RPMRELEASE := $(shell awk '/^Release:/ { print $$2 }' icebreaker.spec)
+PRERELEASE := $(shell awk '/^Release:/ { print $$2 }' icebreaker.spec | grep pre)
 
 ifneq ($(strip $(PRERELEASE)),)
   ifeq ($(shell awk '/^%define.*isprerelease/ { print $$3 }' icebreaker.spec),0)
