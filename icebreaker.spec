@@ -39,10 +39,10 @@ Jezzball by Dima Pavlovsky.
 %endif
 
 %build
-make OPTIMIZE="$RPM_OPT_FLAGS" prefix=/usr
+make OPTIMIZE="$RPM_OPT_FLAGS" prefix=%{_prefix}
 
 %install
-make install prefix=${RPM_BUILD_ROOT}/usr
+make install prefix=${RPM_BUILD_ROOT}%{_prefix}
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications icebreaker.desktop
 
 
