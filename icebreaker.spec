@@ -56,7 +56,7 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications icebreaker.deskt
 
 
 %changelog
-* Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org> - 2.0.0
+* Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org> - 2.0.0-1
 - high scores are going to be local to each home directory; no more setgid
 - update to 2.0.0
 

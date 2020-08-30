@@ -191,10 +191,9 @@ man: icebreaker.6
 	   sed 's?\$$HIGHSCOREDIR?$(highscoredir)/?' > $@
 
 install-mkdirs:
-	mkdir -p $(datadir)/icebreaker
-	mkdir -p $(bindir)
-	mkdir -p $(highscoredir)
-	mkdir -p $(mandir)/man6
+	install -m 755 -d $(datadir)/icebreaker
+	install -m 755 -d $(bindir)
+	install -m 755 -d $(mandir)/man6
 
 themes-install: install-themes
 
