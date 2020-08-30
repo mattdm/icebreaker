@@ -47,9 +47,8 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications icebreaker.deskt
 
 
 %files
-%defattr (-,root,root)
+%license LICENSE
 %doc README README.themes TODO ChangeLog
-%licence LICENSE
 %{_bindir}/icebreaker
 %{_datadir}/applications/icebreaker.desktop
 %{_datadir}/icebreaker
