@@ -1,16 +1,11 @@
-Current cleanup items
----------------------
+Next things that should be done
+-------------------------------
 
-So I can get this into Fedora so Neal can stop being disappointed in me.
+1. Include proper modern metadata for GNOME Software
+2. Update to SDL2.
+3. Integer-scaled 2x and 3x window sizes for modern screen resolutions.
+4. Find someone to update for Windows and Mac.
 
-1. Make config and high score files be user-local instead of system-wide.
-2. Get rid of this-is-fine-for-the-1990s setguid games thing.
-3. Update the spec file to modern standards.
-4. Update the readme file for the current decade.
-5. Either disable fullscreen mode or figure out how to not actually change
-   the resolution to 640×480, which causes my monitor to freeze in disbelief.
-6. Just go ahead and call it 2.0.0.
-7. Add whatever metadata is needed to properly show up in GNOME Software
 
 Also, there's a performance optimization I made which either created or the
 "collapsing iceberg" bug (see below). I bet with computers being several
@@ -18,13 +13,6 @@ times faster than a Pentium 75, I can just back out the optimization. If I
 can remember the details (this was in CVS and I lost all that, which is
 probably mostly fine because my commit messages did not follow
 whatchamightcall "best practices").
-
-Good ideas after that
----------------------
-
-1. Update to SDL2.
-2. Integer-scaled 2x and 3x window sizes for modern screen resolutions.
-3. Find someone to update for Windows and Mac.
 
 Below this, find the _previous_ todo list, circa 2003. Some of these are
 still good ideas. Other parts, like the BeOS port, can probably be dropped.
