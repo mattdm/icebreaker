@@ -79,8 +79,8 @@ int setup(void)
 	setvbuf(stdout,(char *)NULL, _IOLBF, 0);
 	
 	userinfo = getpwuid(getuid()); // FIX -- make this part of the options struct; and maybe save in options file
-	snprintf(username,50,userinfo->pw_name); // not like it's gonna be fifty characters. but y'know. note: gets chopped to fit in gethighusername().
-	snprintf(homedir,255,userinfo->pw_dir); // fix - use OS define for length
+	snprintf(username,50,"%s",userinfo->pw_name); // not like it's gonna be fifty characters. but y'know. note: gets chopped to fit in gethighusername().
+	snprintf(homedir,255,"%s",userinfo->pw_dir); // fix - use OS define for length
 
 	inithiscores();
 	newuser=readoptions();		

@@ -60,7 +60,7 @@ void readhiscores()
 {
 	FILE *hiscorefile;
 	char linebuf[80];
-	char filename[255]; // fix -- use defined OS constant
+	char filename[274]; // fix -- use defined OS constant
 
 	int arrayindex[HISCORENUM];
 	int i;
@@ -77,7 +77,7 @@ void readhiscores()
 		temphiscoreval[i]=100; //100 is better than 0. :)
 	}
 
-	snprintf(filename,255,"%s/%s",homedir,HISCOREFILE);
+	snprintf(filename,274,"%s/%s",homedir,HISCOREFILE);
 
 	hiscorefile=fopen(filename,"r");
 	if (hiscorefile==NULL)
@@ -106,7 +106,7 @@ void readhiscores()
 	// ok, so now, we can copy things over in the proper sorted order
 	for (i=0;i<HISCORENUM;i++)
 	{
-		snprintf(hiscorename[i],50,temphiscorename[arrayindex[i]]);
+		snprintf(hiscorename[i],50,"%s",temphiscorename[arrayindex[i]]);
 		hiscoreval[i]=temphiscoreval[arrayindex[i]];
 	}
 
@@ -127,9 +127,9 @@ int addhiscore(char* username, long finalscore, int candelay)
 	int gotlock=false;
 	int rc=-1;
 	FILE_DESC filelock;
-	char filename[255]; // fix -- use defined OS constant
+	char filename[274]; // fix -- use defined OS constant
 	
-	snprintf(filename,255,"%s/%s",homedir,HISCORELOCKFILE);
+	snprintf(filename,274,"%s/%s",homedir,HISCORELOCKFILE);
 
 	filelock = openlockfile(filename);
 	if (filelock == INVALID_FILE_DESC)
@@ -207,13 +207,13 @@ void sorthiscore(char hiname[HISCORENUM][50],long hival[HISCORENUM],char * usern
 	// make sure the temp array contains the right data
 	for (i=0;i<HISCORENUM;i++)
 	{
-		snprintf(temphiscorename[i],50,hiname[i]);
+		snprintf(temphiscorename[i],50,"%s",hiname[i]);
 		temphiscoreval[i]=hival[i];
 	}
 	
 	// and toss in the new data 
 	//(this is why these arrays are size HISCORENUM+1)
-	snprintf(temphiscorename[HISCORENUM],50,username);
+	snprintf(temphiscorename[HISCORENUM],50,"%s",username);
 	temphiscoreval[HISCORENUM]=score;
 
 	// fill the "helper" array. 
@@ -227,7 +227,7 @@ void sorthiscore(char hiname[HISCORENUM][50],long hival[HISCORENUM],char * usern
 	// and take the top ones back.
 	for (i=0;i<HISCORENUM;i++)
 	{
-		snprintf(hiname[i],50,temphiscorename[arrayindex[i]]); 
+		snprintf(hiname[i],50,"%s",temphiscorename[arrayindex[i]]); 
 		hival[i]=temphiscoreval[arrayindex[i]];
 	}
 }
@@ -235,12 +235,12 @@ void sorthiscore(char hiname[HISCORENUM][50],long hival[HISCORENUM],char * usern
 void writehiscores(char * username, long thisgamescore)
 {
 	FILE *hiscorefile;
-	char filename[255]; // fix -- use defined OS constant
+	char filename[274]; // fix -- use defined OS constant
 	int i;
 
 	sorthiscore(hiscorename,hiscoreval,username,thisgamescore);
 
-	snprintf(filename,255,"%s/%s",homedir,HISCOREFILE);
+	snprintf(filename,274,"%s/%s",homedir,HISCOREFILE);
 	
 	hiscorefile=fopen(filename,"w");
 	if (hiscorefile==NULL)

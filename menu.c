@@ -547,13 +547,13 @@ PopupReturnType menuitem_theme(char * val, int mbutton)
 			if (mbutton==1 || mbutton==4) // left click or scroll forwards
 			{
 				strncpy(val,themelist[(t+1)%themecount],MAXMENUVALUELENGTH);
-				snprintf(options.theme,MAXMENUVALUELENGTH,themelist[(t+1)%themecount]);
+				snprintf(options.theme,MAXMENUVALUELENGTH,"%s",themelist[(t+1)%themecount]);
 			}
 			else // right or middle or scroll back
 			{
 				if (t<0) t=themecount;
 				strncpy(val,themelist[(t-1)%themecount],MAXMENUVALUELENGTH);
-				snprintf(options.theme,MAXMENUVALUELENGTH,themelist[(t-1)%themecount]);
+				snprintf(options.theme,MAXMENUVALUELENGTH,"%s",themelist[(t-1)%themecount]);
 			}
 			
 			settheme(options.theme);

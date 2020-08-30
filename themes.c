@@ -487,7 +487,7 @@ int setrandomtheme()
 	}
 	else
 	{
-		snprintf(themename,MAXTHEMENAMELENGTH+1,themelist[random() %themecount]);
+		snprintf(themename,MAXTHEMENAMELENGTH+1,"%s",themelist[random() %themecount]);
 	}
 	freethemenames(&themelist,themecount);
 	return settheme(themename);
