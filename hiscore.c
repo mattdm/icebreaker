@@ -60,6 +60,7 @@ void readhiscores()
 {
 	FILE *hiscorefile;
 	char linebuf[80];
+	char filename[255]; // fix -- use defined OS constant
 
 	int arrayindex[HISCORENUM];
 	int i;
@@ -76,12 +77,14 @@ void readhiscores()
 		temphiscoreval[i]=100; //100 is better than 0. :)
 	}
 
-	hiscorefile=fopen(HISCOREPREFIX "/" HISCOREFILE,"r");
+	snprintf(filename,255,"%s/%s",homedir,HISCOREFILE);
+
+	hiscorefile=fopen(filename,"r");
 	if (hiscorefile==NULL)
 	{
 		// It's writing we need to worry about, really, so don't
 		// complain here.
-		//fprintf(stderr,"Can't read high score file; continuing anyway.\nYou may want to ask your sysadmin to make sure this program can access\n " HISCOREPREFIX "/" HISCOREFILE "\n");
+		//fprintf(stderr,"Can't read high score file; continuing anyway.\nYou may want to ask your sysadmin to make sure this program can access\n " homedir "/" HISCOREFILE "\n");
 	}
 	else
 	{
@@ -124,13 +127,16 @@ int addhiscore(char* username, long finalscore, int candelay)
 	int gotlock=false;
 	int rc=-1;
 	FILE_DESC filelock;
+	char filename[255]; // fix -- use defined OS constant
+	
+	snprintf(filename,255,"%s/%s",homedir,HISCORELOCKFILE);
 
-	filelock = openlockfile(HISCORELOCKFILE);
+	filelock = openlockfile(filename);
 	if (filelock == INVALID_FILE_DESC)
 	{
 		 fprintf(stderr,"Can't access lock file -- this means we can't save the high scores.\n"
 	 	                "You may want to ask your sysadmin to make sure this program can write to\n"
-		                "<" HISCORELOCKFILE ">.\n");
+		                "<%s>.\n",filename);
 	}
 	else
 	{
@@ -147,7 +153,7 @@ int addhiscore(char* username, long finalscore, int candelay)
 			if (gotlock)
 			{
 				fprintf(stderr,"Warning: something very strange has happened. This isn't good.\n"
-				               "Can't unlock <"HISCORELOCKFILE">!\n");
+				               "Can't unlock <%s>!\n",filename);
 		        }     
 		}
 		else if (candelay)
@@ -229,18 +235,19 @@ void sorthiscore(char hiname[HISCORENUM][50],long hival[HISCORENUM],char * usern
 void writehiscores(char * username, long thisgamescore)
 {
 	FILE *hiscorefile;
+	char filename[255]; // fix -- use defined OS constant
 	int i;
 
 	sorthiscore(hiscorename,hiscoreval,username,thisgamescore);
 
-	hiscorefile=fopen(HISCOREPREFIX "/" HISCOREFILE,"w");
+	snprintf(filename,255,"%s/%s",homedir,HISCOREFILE);
 	
-	hiscorefile=fopen(HISCOREPREFIX "/" HISCOREFILE,"w");
+	hiscorefile=fopen(filename,"w");
 	if (hiscorefile==NULL)
 	{
 		fprintf(stderr,"Can't save high scores."
 		               "You may want to ask your sysadmin to make sure this program can write to\n"
-	                       "<" HISCOREPREFIX "/" HISCOREFILE ">.\n");
+	                       "<%s>.\n",filename);
 	}
 	else
 	{

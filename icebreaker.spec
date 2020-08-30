@@ -40,18 +40,14 @@ Jezzball by Dima Pavlovsky.
 %endif
 
 %build
-make OPTIMIZE="$RPM_OPT_FLAGS" highscoredir=/var/lib/games prefix=/usr
+make OPTIMIZE="$RPM_OPT_FLAGS" prefix=/usr
 
 %install
-make install highscoredir=${RPM_BUILD_ROOT}/var/lib/games prefix=${RPM_BUILD_ROOT}/usr
+make install prefix=${RPM_BUILD_ROOT}/usr
 
 mkdir -p ${RPM_BUILD_ROOT}/etc/X11/applnk/Games
 install -m 644 icebreaker.desktop ${RPM_BUILD_ROOT}/etc/X11/applnk/Games
 
-%post
-touch %{_var}/lib/games/icebreaker.scores
-chown games:games %{_var}/lib/games/icebreaker.scores
-chmod 0664 %{_var}/lib/games/icebreaker.scores
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,13 +55,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr (-,root,root)
 %doc README README.themes TODO LICENSE ChangeLog
-%attr(2755,root,games) %{_bindir}/icebreaker
+%{_bindir}/icebreaker
 /etc/X11/applnk/Games/icebreaker.desktop
 %{_datadir}/icebreaker
 %{_mandir}/man6/*
-%attr(664,games,games) %ghost %{_var}/lib/games/icebreaker.scores
 
 %changelog
+* Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org>
+- high scores are going to be local to each home directory; no more setgid
+
 * Thu Nov 16 2006 Matthew Miller <mattdm@mattdm.org>
 - working towards 1.9.9 :)
 

@@ -91,19 +91,6 @@
 /* and here's the defaults */
 
 
-#ifndef HISCOREPREFIX
-  #define HISCOREPREFIX "/var/lib/games"
-#endif
-
-#ifndef HISCOREFILE
-  #define HISCOREFILE "icebreaker.scores"
-#endif
-
-#ifndef HISCORELOCKFILE
-  #define HISCORELOCKFILE HISCOREPREFIX "/" HISCOREFILE
-#endif
-
-
 
 #ifndef DATAPREFIX 
   #define DATAPREFIX "/usr/local/share/icebreaker"
@@ -112,6 +99,14 @@
 #ifndef OPTIONFILE
   #define OPTIONFILE ".icebreaker"
 #endif  
+
+#ifndef HISCOREFILE
+  #define HISCOREFILE ".icebreaker.scores"
+#endif
+
+#ifndef HISCORELOCKFILE
+  #define HISCORELOCKFILE HISCOREFILE
+#endif
 
 #ifndef PENGUINICONFILE
   #define PENGUINICONFILE "icebreaker_48.bmp"
