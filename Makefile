@@ -20,13 +20,7 @@ ifndef bindir
 endif
 
 
-ifndef highscoredir
-  highscoredir=/var/local/lib/games
-  #highscoredir=/var/lib/games
-endif
-
-
-CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\" -DHISCOREPREFIX=\"$(highscoredir)\"
+CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\"
 
 SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
     level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
@@ -187,8 +181,7 @@ man: icebreaker.6
 
 %.6: %.man.in
 	sed 's/\$$VERSION/$(VERSION)/' $< | \
-	   sed 's/\$$VERDATE/$(VERDATE)/' | \
-	   sed 's?\$$HIGHSCOREDIR?$(highscoredir)/?' > $@
+	   sed 's/\$$VERDATE/$(VERDATE)/' > $@
 
 install-mkdirs:
 	install -m 755 -d $(datadir)/icebreaker
