@@ -1,18 +1,18 @@
-Name:		icebreaker
-Version:	2.0.0
-Release:	1
-Summary:	An addictive action-puzzle game involving bouncing penguins
-%define 	isprerelease 0
-%define		isdevelrelease 0
-License:	GPLv2
+Name:        icebreaker
+Version:    2.0.0
+Release:    1
+Summary:    An addictive action-puzzle game involving bouncing penguins
+%define     isprerelease 0
+%define        isdevelrelease 0
+License:    GPLv2
 
 %if %{isprerelease}
-Source: 	icebreaker-%{version}-%{release}.tar.xz
+Source:     icebreaker-%{version}-%{release}.tar.xz
 %else
-Source: 	https://mattdm.org/icebreaker/2.0.x/icebreaker-%{version}.tar.xz
+Source:     https://mattdm.org/icebreaker/2.0.x/icebreaker-%{version}.tar.xz
 %endif
 
-URL:		http://www.mattdm.org/icebreaker/
+URL:        http://www.mattdm.org/icebreaker/
 
 BuildRequires:  gcc, make
 BuildRequires:  SDL-devel, SDL_mixer-devel
