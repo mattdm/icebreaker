@@ -203,22 +203,12 @@ install-themes:
 	install -m 644 *.wav *.bmp $(datadir)/icebreaker
 
 install-bin: icebreaker
-	install -g games -m 2755 icebreaker $(bindir) || \
-	  install -m 755 icebreaker $(bindir)
-	@test -g $(bindir)/icebreaker || \
-	  echo -e '*** Note: icebreaker binary not installed set-group-ID "games" -- shared\n*** highscores may be impossible. (Try installing as root.)'
+	install -m 755 icebreaker $(bindir)
 
 install-man: icebreaker.6
 	install -m 644 icebreaker.6 $(mandir)/man6
 
-install-scorefile:
-	touch $(highscoredir)/icebreaker.scores
-	chown -f games:games $(highscoredir)/icebreaker.scores && \
-	chmod 664 $(highscoredir)/icebreaker.scores || \
-	chmod 644 $(highscoredir)/icebreaker.scores
-
-
-install: all install-mkdirs install-themes install-bin install-man install-scorefile
+install: all install-mkdirs install-themes install-bin install-man
 
 %.d: %.c
 	set -e; $(CC) -M $(CFLAGS) $< \
