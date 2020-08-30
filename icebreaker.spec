@@ -13,7 +13,10 @@ Source: 	https://mattdm.org/icebreaker/2.0.x/icebreaker-%{version}.tar.xz
 %endif
 
 URL:		http://www.mattdm.org/icebreaker/
-BuildRequires:  SDL-devel, SDL_mixer-devel, /bin/awk, /bin/sed, /bin/grep
+
+BuildRequires:  gcc, make
+BuildRequires:  SDL-devel, SDL_mixer-devel
+BuildRequires:  gawk, sed, grep
 BuildRequires:  desktop-file-utils
 
 %if %{isprerelease}
