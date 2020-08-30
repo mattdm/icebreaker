@@ -1,9 +1,9 @@
 Summary:	An addictive action-puzzle game involving bouncing penguins
 Name:		icebreaker
-Version:	1.9.9
+Version:	2.0.0
 Release:	0
 %define 	isprerelease 0
-%define		isdevelrelease 1
+%define		isdevelrelease 0
 License:	GPL
 Group:		Amusements/Games
 
