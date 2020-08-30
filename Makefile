@@ -91,7 +91,7 @@ clean:
 	-rm -f icebreaker.nsi
 	-rm -f *.o
 	-rm -f *.d
-	-rm -f *.tar.gz
+	-rm -f *.tar.xz
 	-rm -f *.zip
 	-rm -f *.exe
 	-rm -f *.rpm
@@ -99,16 +99,16 @@ clean:
 dist: tgz win32 rpm
 	ls -lh --color=yes icebreaker-$(VERSION)*
 
-tgz: icebreaker-$(VERSIONSTRING).tar.gz
+tgz: icebreaker-$(VERSIONSTRING).tar.xz
 
-icebreaker-$(VERSIONSTRING).tar.gz: $(DISTFILES)
+icebreaker-$(VERSIONSTRING).tar.xz: $(DISTFILES)
 	[ -d icebreaker-$(VERSIONSTRING) ] && rm -rf icebreaker-$(VERSIONSTRING) || true
 	mkdir icebreaker-$(VERSIONSTRING)
 	cp -p * icebreaker-$(VERSIONSTRING) || true
 	(cd icebreaker-$(VERSIONSTRING); make clean)
-	tar czf icebreaker-$(VERSIONSTRING).tar.gz icebreaker-$(VERSIONSTRING)
+	tar cJf icebreaker-$(VERSIONSTRING).tar.xz icebreaker-$(VERSIONSTRING)
 	[ -d icebreaker-$(VERSIONSTRING) ] && rm -rf icebreaker-$(VERSIONSTRING) || true
-	tar tzf icebreaker-$(VERSIONSTRING).tar.gz
+	tar tf icebreaker-$(VERSIONSTRING).tar.xz
 
 rpm: srcrpm binrpm
 
@@ -116,13 +116,13 @@ srcrpm: icebreaker-$(VERSION)-$(RPMRELEASE).src.rpm
 binrpm: $(RPMARCH)rpm
 $(RPMARCH)rpm: icebreaker-$(VERSION)-$(RPMRELEASE).$(RPMARCH).rpm
 
-icebreaker-$(VERSION)-$(RPMRELEASE).src.rpm: icebreaker-$(VERSIONSTRING).tar.gz icebreaker.spec
+icebreaker-$(VERSION)-$(RPMRELEASE).src.rpm: icebreaker-$(VERSIONSTRING).tar.xz icebreaker.spec
 	[ -d rpmbuild ] && rm -rf rpmbuild || true
 	mkdir -p rpmbuild/tmp
 	rpmbuild $(RPMCRAZYDEFINES) -bs icebreaker.spec
 	[ -d rpmbuild ] && rm -rf rpmbuild || true
 
-icebreaker-$(VERSION)-$(RPMRELEASE).$(RPMARCH).rpm: icebreaker-$(VERSIONSTRING).tar.gz icebreaker.spec
+icebreaker-$(VERSION)-$(RPMRELEASE).$(RPMARCH).rpm: icebreaker-$(VERSIONSTRING).tar.xz icebreaker.spec
 	[ -d rpmbuild ] && rm -rf rpmbuild || true
 	mkdir -p rpmbuild/tmp; mkdir -p rpmbuild/build
 	rpmbuild $(RPMCRAZYDEFINES) -bb icebreaker.spec
@@ -143,11 +143,11 @@ icebreaker-$(VERSIONSTRING).exe: icebreaker.nsi icebreaker-$(VERSIONSTRING).zip
 
 zip: icebreaker-$(VERSIONSTRING).zip
 
-icebreaker-$(VERSIONSTRING).zip: icebreaker.exe icebreaker-$(VERSIONSTRING).tar.gz
+icebreaker-$(VERSIONSTRING).zip: icebreaker.exe icebreaker-$(VERSIONSTRING).tar.xz
 	[ -d icebreaker-$(VERSIONSTRING) ] && rm -rf icebreaker-$(VERSIONSTRING) || true
 	mkdir icebreaker-$(VERSIONSTRING)
 	cp icebreaker.exe icebreaker-$(VERSIONSTRING)
-	cp icebreaker-$(VERSIONSTRING).tar.gz icebreaker-$(VERSIONSTRING)/icebreaker-$(VERSIONSTRING)-src.tar.gz
+	cp icebreaker-$(VERSIONSTRING).tar.xz icebreaker-$(VERSIONSTRING)/icebreaker-$(VERSIONSTRING)-src.tar.xz
 	cp $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL.dll icebreaker-$(VERSIONSTRING)
 	cp $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL_mixer.dll icebreaker-$(VERSIONSTRING)
 	cp *.wav icebreaker-$(VERSIONSTRING)

@@ -1,21 +1,20 @@
-Summary:	An addictive action-puzzle game involving bouncing penguins
 Name:		icebreaker
 Version:	2.0.0
-Release:	0
+Release:	1
+Summary:	An addictive action-puzzle game involving bouncing penguins
 %define 	isprerelease 0
 %define		isdevelrelease 0
-License:	GPL
-Group:		Amusements/Games
+License:	GPLv2
 
 %if %{isprerelease}
-Source: 	icebreaker-%{version}-%{release}.tar.gz
+Source: 	icebreaker-%{version}-%{release}.tar.xz
 %else
-Source: 	icebreaker-%{version}.tar.gz
+Source: 	https://mattdm.org/icebreaker/2.0.x/icebreaker-%{version}.tar.xz
 %endif
 
 URL:		http://www.mattdm.org/icebreaker/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  SDL-devel, SDL_mixer-devel, /bin/awk, /bin/sed, /bin/grep
+BuildRequires:  desktop-file-utils
 
 %if %{isprerelease}
 %define extradescription *** Warning *** This is a prerelease build not meant for general public use.
@@ -44,25 +43,23 @@ make OPTIMIZE="$RPM_OPT_FLAGS" prefix=/usr
 
 %install
 make install prefix=${RPM_BUILD_ROOT}/usr
+desktop-file-install --dir=%{buildroot}%{_datadir}/applications icebreaker.desktop
 
-mkdir -p ${RPM_BUILD_ROOT}/etc/X11/applnk/Games
-install -m 644 icebreaker.desktop ${RPM_BUILD_ROOT}/etc/X11/applnk/Games
-
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr (-,root,root)
-%doc README README.themes TODO LICENSE ChangeLog
+%doc README README.themes TODO ChangeLog
+%licence LICENSE
 %{_bindir}/icebreaker
-/etc/X11/applnk/Games/icebreaker.desktop
+%{_datadir}/applications/icebreaker.desktop
 %{_datadir}/icebreaker
 %{_mandir}/man6/*
 
+
 %changelog
-* Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org>
+* Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org> - 2.0.0
 - high scores are going to be local to each home directory; no more setgid
+- update to 2.0.0
 
 * Thu Nov 16 2006 Matthew Miller <mattdm@mattdm.org>
 - working towards 1.9.9 :)
