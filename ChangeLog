@@ -1,4 +1,14 @@
+August 30, 2020: released 2.0.0
+  - hey, let's just release this already.
+  - move high score to home directory.
+  - don't install setguid games.
+  - fix some bad snprintf() calls. ("fix")
+  - help wanted with windows and mac ports!
+  - help wanted with porting to SDL 2.x!
+
+November 16, 2006: unreleased 1.9.8
   - win32 version now uses registry for configuration options
+  - some other minor tweaks
 
 June 8, 2002: released 1.9.7
   - game loop timing more precise -- now busy-waits if need be (but still
