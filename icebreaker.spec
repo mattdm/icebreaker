@@ -1,10 +1,10 @@
-Name:        icebreaker
+Name:       icebreaker
 Version:    2.0.0
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
-%define        isdevelrelease 0
-License:    GPLv2
+%define     isdevelrelease 0
+License:    GPLv2+
 
 %if %{isprerelease}
 Source:     icebreaker-%{version}-%{release}.tar.xz

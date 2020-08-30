@@ -149,7 +149,7 @@ WHITHER:
 
 ------------------------------------------------------------------------------
 Copyright (C) 2000-2002 Matthew Miller and others and released under the
-terms of the GNU General Public License.
+terms of the GNU General Public License, version 2 or later.
 
 This project uses the Simple DirectMedia Layer and SDL Mixer libraries which
 are available under the GNU LGPL license. SDL and SDL_mixer source code
