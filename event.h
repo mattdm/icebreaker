@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2000-2002 Matthew Miller <mattdm@mattdm.org> and
+* Copyright (c) 2000-2020 Matthew Miller <mattdm@mattdm.org> and
 *   Enrico Tassi <gareuselesinge@infinito.it>
 * 
 * <http://www.mattdm.org/icebreaker/>

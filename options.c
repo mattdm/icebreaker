@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2001-2002 Matthew Miller <mattdm@mattdm.org> and
+* Copyright (c) 2001-2020 Matthew Miller <mattdm@mattdm.org> and
 *   Enrico Tassi <gareuselesinge@infinito.it>
 *
 * <http://www.mattdm.org/icebreaker/>
@@ -363,7 +363,7 @@ int findflag(int argc,char** argv, char* option)
 
 void printversion()
 {
-	printf("\nIceBreaker v%d.%d.%d  Copyright 2000-2002 Matthew Miller, et al.\n\n",VERMAJOR,VERMINOR,VERSUB);
+	printf("\nIceBreaker v%d.%d.%d  Copyright 2000-2020 Matthew Miller, et al.\n\n",VERMAJOR,VERMINOR,VERSUB);
 
 	printf("Written by Matthew Miller with additional code and help from Enrico Tassi\n"
 	       "and others. Like to contribute to the project? Good code, graphics, sounds,\n"

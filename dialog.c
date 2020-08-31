@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2000-2002 Matthew Miller <mattdm@mattdm.org> and
+* Copyright (c) 2000-2020 Matthew Miller <mattdm@mattdm.org> and
 *   Enrico Tassi <gareuselesinge@infinito.it>
 *
 * <http://www.mattdm.org/icebreaker/>
@@ -372,7 +372,7 @@ PopupReturnType popuphelp()
 	{
 		puttext(helprect.x+BLOCKWIDTH/2,helprect.y+BLOCKHEIGHT/2+i*(CHARHEIGHT*2+4),2,color.normaltext,helptext[i]);		
 	}
-	snprintf(buf,80,"v%d.%d.%d   %s",VERMAJOR,VERMINOR,VERSUB,"Copyright (c) 2000-2002 Matthew Miller. Released under the GPL.");
+	snprintf(buf,80,"v%d.%d.%d   %s",VERMAJOR,VERMINOR,VERSUB,"Copyright (c) 2000-2020 Matthew Miller. Released under the GPL.");
 	puttext(helprect.x+BLOCKWIDTH/2,helprect.y+helprect.h-CHARHEIGHT*3,1,color.copyrighttext,buf);		
 	puttext(helprect.x+BLOCKWIDTH/2,helprect.y+helprect.h-CHARHEIGHT*1-3,1,color.copyrighttext,"Thanks to my wonderful wife Karen for inspiration (and for patience)!");		
 	

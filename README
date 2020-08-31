@@ -148,7 +148,7 @@ WHITHER:
 
 
 ------------------------------------------------------------------------------
-Copyright (C) 2000-2002 Matthew Miller and others and released under the
+Copyright (C) 2000-2020 Matthew Miller and others and released under the
 terms of the GNU General Public License, version 2 or later.
 
 This project uses the Simple DirectMedia Layer and SDL Mixer libraries which

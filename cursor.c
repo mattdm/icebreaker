@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2000-2002 Matthew Miller <mattdm@mattdm.org>
+* Copyright (c) 2000-2020 Matthew Miller <mattdm@mattdm.org>
 * except the init_system_cursor function, which was lovingly stolen from
 * the SDL documentation
 *
