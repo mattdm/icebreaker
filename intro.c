@@ -578,7 +578,7 @@ int intro(void)
 // be plenty long, but it's good to keep the buffer bigger. Anyway, the value
 // in highscore.c should be a define, and this should be that-define + some 
 // reasonable value for the width of the score.
-#define SCOREMAXLEN 70
+#define SCOREMAXLEN 550
 
 SDL_Surface* createscoresurface()
 {

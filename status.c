@@ -87,7 +87,7 @@ extern void updatehiscorebox()
 {
 	SDL_Rect tmprect;
 	
-	char tmptext[40]; // should be plenty big.
+	char tmptext[100]; // should be plenty big.
 	
 	tmprect.x=LIVESX; tmprect.y=BOTTOMSTATUSY;
 	tmprect.h=CHARHEIGHT*3;; tmprect.w=WIDTH-(CHARWIDTH*2*4)-MARGINRIGHT-4-LIVESX-2;
@@ -95,7 +95,7 @@ extern void updatehiscorebox()
 	
 	SDL_FillRect(screen,&tmprect,color.background);
 	
-	snprintf(tmptext,40,"HIGH SCORE: %ld (%s)",hiscoreval[0],hiscorename[0]);
+	snprintf(tmptext,100,"HIGH SCORE: %ld (%s)",hiscoreval[0],hiscorename[0]);
 	puttext(tmprect.x,tmprect.y+3,2,color.normaltext,tmptext);	
 	
 	soil(tmprect);
