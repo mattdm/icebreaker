@@ -586,7 +586,7 @@ SDL_Surface* createscoresurface()
 	char scoretext[SCOREMAXLEN];
 	int i,len;
 
-	//caculate needed len
+	//calculate needed len
 	len=0;
 	for( i = 0 ; i < HISCORENUM ; i++)
 	{
