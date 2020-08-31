@@ -1,3 +1,7 @@
+August 31, 2020: released 2.1.0
+ - clean up a bunch of buffer overflows
+ - make build on Fedora 32 without warnings
+
 August 30, 2020: released 2.0.0
   - hey, let's just release this already.
   - move high score to home directory.
