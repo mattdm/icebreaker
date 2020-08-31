@@ -1,5 +1,5 @@
 Name:       icebreaker
-Version:    2.0.1
+Version:    2.0.2
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
@@ -59,6 +59,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications icebreaker.deskt
 
 
 %changelog
+* Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org> - 2.0.2-1
+- minor tweaks
+
 * Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org> - 2.0.0-1
 - high scores are going to be local to each home directory; no more setgid
 - update to 2.0.0
