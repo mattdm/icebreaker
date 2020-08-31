@@ -474,7 +474,7 @@ int getthemenumber(char** themenamelist,int numthemes,char* themename)
 
 int setrandomtheme()
 {
-	char themename[MAXTHEMENAMELENGTH];
+	char themename[MAXTHEMENAMELENGTH+1];
 	char** themelist;
 	int themecount;
 	
