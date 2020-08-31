@@ -35,7 +35,7 @@ typedef struct
 	AutoPauseType autopause;
 	GameDifficultyType difficulty;
 	FullscreenSettingType fullscreen;
-        char theme[MAXTHEMENAMELENGTH+1]; // +1 for \0
+        char theme[11+MAXTHEMENAMELENGTH];
 } GameOptionsType;
 
 typedef struct

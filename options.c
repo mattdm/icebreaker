@@ -94,7 +94,7 @@ int readoptions(void)
 {
 	OPTFILEHANDLER * optionfile;
 	char linebuf[50];
-	char filename[255]; // fix -- use defined OS constant
+	char filename[4096]; // fix -- use defined OS constant
 	char optbuf[21];
 	char valbuf[10+MAXTHEMENAMELENGTH];
 	char scanformat[20];
@@ -102,7 +102,7 @@ int readoptions(void)
 
 	setdefaultoptions();
 	
-	snprintf(filename,255,"%s/%s",homedir,OPTIONFILE);
+	snprintf(filename,4096,"%s/%s",homedir,OPTIONFILE);
 	
 	optionfile=openoptionfile(filename,"r");
 	if (optionfile==NULL)
@@ -156,7 +156,7 @@ int readoptions(void)
 			}
 			else if (!strcmp(optbuf,"theme"))
 			{
-				snprintf(options.theme,MAXTHEMENAMELENGTH+1,"%s",valbuf);
+				snprintf(options.theme,MAXTHEMENAMELENGTH+10,"%s",valbuf);
 			}
 			// FIX: add username
 		}
@@ -170,8 +170,8 @@ int readoptions(void)
 int writeoptions(void)
 {
 	OPTFILEHANDLER * optionfile;
-	char filename[255];
-	snprintf(filename,255,"%s/%s",homedir,OPTIONFILE);
+	char filename[4096];
+	snprintf(filename,4096,"%s/%s",homedir,OPTIONFILE);
 	
 	optionfile=openoptionfile(filename,"w");
 	if (optionfile==NULL)
