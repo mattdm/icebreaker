@@ -165,30 +165,29 @@ int scrolltext(char * firsttext, SDL_Rect* firstrect, Uint32 firstcolor, char * 
 	while (!done) 
 	{
 		while(pollevent(&event));
+
+		if (event.type == SDL_QUIT)
 		{
-			if (event.type == SDL_QUIT)
+			done=true; quit=true;
+		}
+		else if (event.type==SDL_MOUSEBUTTONDOWN)
+		{
+			if (event.button.button==1)
 			{
-				done=true; quit=true;
+					done=true;
 			}
-			else if (event.type==SDL_MOUSEBUTTONDOWN)
+		}
+		else if (event.type == SDL_KEYUP)
+		{
+			switch(translatekeyevent(&event))
 			{
-				if (event.button.button==1)
-				{
-						done=true;
-				}
-			}
-			else if (event.type == SDL_KEYUP)
-			{
-				switch(translatekeyevent(&event))
-				{
-					case KEYCANCEL:     // falls through
-					case KEYMENU:       // falls through
-					case KEYSWITCHLINE: // falls through
-					case KEYSTARTLINE:  
-						done=true;
-					default:
-					break;
-				}
+				case KEYCANCEL:     // falls through
+				case KEYMENU:       // falls through
+				case KEYSWITCHLINE: // falls through
+				case KEYSTARTLINE:  
+					done=true;
+				default:
+				break;
 			}
 		}
 		
