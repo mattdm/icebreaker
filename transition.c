@@ -85,7 +85,7 @@ int intermission(ScoreSheet * levelscore, int nextlevel)
 
 int gameover(long finalscore)
 {
-	int done=false; int quit=false;
+	int quit=false;
 	SDL_Event event;
 	SDL_Rect loserrect, finalrect;
 
@@ -106,7 +106,7 @@ int gameover(long finalscore)
 
 	// clear any pending events
 	SDL_Delay(10); // needed? probably not.
-	while (pollevent(&event)) if (event.type == SDL_QUIT) { done=true; quit=true; }
+	while (pollevent(&event)) if (event.type == SDL_QUIT) { quit=true; }
 
 	if (!checkhiscore(finalscore))
 		setcursor(CURSORCLICK);
