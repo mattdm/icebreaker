@@ -191,7 +191,7 @@ PopupReturnType popupoptionsmenu()
 {
 	SDL_Rect menurect;
 	GameDifficultyType originaldifficulty=options.difficulty;
-	char originaltheme[MAXTHEMENAMELENGTH+1];
+	char originaltheme[MAXTHEMENAMELENGTH+11];
 	PopupReturnType rc;
 	int originalthemecl=false;
 	int recallme=false;
@@ -200,6 +200,9 @@ PopupReturnType popupoptionsmenu()
 	char * optionsmenu[OPTIONSMENULENGTH] = { "SOUND", "AUTO PAUSE", "FULL SCREEN", "DIFFICULTY", "THEME" };
 	PopupReturnType (*optionsmenufunctions[OPTIONSMENULENGTH])(char *,int) = { &menuitem_sound, &menuitem_autopause, &menuitem_fullscreen, &menuitem_difficulty, &menuitem_theme };
 
+// truncation is on purpose
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-truncation"
 	if (strlen(commandline.theme)>0)
 	{
 		snprintf(originaltheme,MAXTHEMENAMELENGTH+1,"%s",commandline.theme);
@@ -210,6 +213,7 @@ PopupReturnType popupoptionsmenu()
 		snprintf(originaltheme,MAXTHEMENAMELENGTH+1,"%s",options.theme);
 		originalthemecl=false;	
 	}
+#pragma GCC diagnostic pop	
 				
 	menurect.w=229;
 	menurect.h=7+(OPTIONSMENULENGTH*(CHARHEIGHT*2+3));
