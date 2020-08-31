@@ -27,7 +27,7 @@ SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
     menu.c options.c fullscreen.c themes.c event.c titlebar.c benchmark.c \
     misc.c lock.c delay.c
 
-DISTFILES=$(wildcard *.c *.h *.bmp *.ibt *.wav *.sh *.rc *.ico *.desktop *.man.in *.nsi.in *.spec README* TODO LICENSE INSTALL ChangeLog Makefile*)
+DISTFILES=$(wildcard *.c *.h *.bmp *.png *.ibt *.wav *.sh *.rc *.ico *.desktop *.man.in *.nsi.in *.spec README* TODO LICENSE INSTALL ChangeLog Makefile*)
 
 SDL_MIXER=-lSDL_mixer
 SDL_LIB=$(SDL_MIXER) $(SDL_LDFLAGS)
@@ -146,6 +146,7 @@ icebreaker-$(VERSIONSTRING).zip: icebreaker.exe icebreaker-$(VERSIONSTRING).tar.
 	cp $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL_mixer.dll icebreaker-$(VERSIONSTRING)
 	cp *.wav icebreaker-$(VERSIONSTRING)
 	cp *.bmp icebreaker-$(VERSIONSTRING)
+	cp *.png icebreaker-$(VERSIONSTRING)
 	for i in *.ibt; do $(UNIX2DOS) -n $$i icebreaker-$(VERSIONSTRING)/$$i; done
 	$(UNIX2DOS) -n ChangeLog icebreaker-$(VERSIONSTRING)/ChangeLog.txt
 	$(UNIX2DOS) -n LICENSE icebreaker-$(VERSIONSTRING)/LICENSE.txt
@@ -192,7 +193,7 @@ themes-install: install-themes
 
 install-themes:
 	install -m 644 *.ibt $(datadir)/icebreaker
-	install -m 644 *.wav *.bmp $(datadir)/icebreaker
+	install -m 644 *.wav *.bmp *.png $(datadir)/icebreaker
 
 install-bin: icebreaker
 	install -m 755 icebreaker $(bindir)
