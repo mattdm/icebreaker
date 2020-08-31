@@ -506,11 +506,16 @@ PopupReturnType menuitem_theme(char * val, int mbutton)
 
 	if (strlen(val)==0)
 	{
+	
+		
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstringop-truncation"
 		if (strlen(commandline.theme)>0)
 			strncpy(val,commandline.theme,MAXMENUVALUELENGTH);
 		else
 			strncpy(val,options.theme,MAXMENUVALUELENGTH);
 		return POPUPDONOTHING;
+#pragma GCC diagnostic pop		
 	}
 	else
 	{
