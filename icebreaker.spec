@@ -1,9 +1,9 @@
 Name:       icebreaker
-Version:    2.0.1
+Version:    2.1.0
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
-%define     isdevelrelease 0
+%define     isdevelrelease 1
 License:    GPLv2+
 
 %if %{isprerelease}
