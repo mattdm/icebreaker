@@ -106,9 +106,6 @@ int intro(void)
 
 	SDL_Rect labelrect;
 	SDL_Rect scrollrect;
-	SDL_Rect bigrect;
-	SDL_Rect rightmarginrect;
-	SDL_Rect leftmarginrect;
 #ifdef DEVELRELEASE
 	SDL_Rect develdisclaimerrect;
 #endif
@@ -140,21 +137,6 @@ int intro(void)
 	scrollrect.y=labelrect.y;
 	scrollrect.w=BORDERRIGHT-(BORDERLEFT+CHARWIDTH*21);
 	scrollrect.h=labelrect.h;
-
-	rightmarginrect.x=BORDERRIGHT;
-	rightmarginrect.y=labelrect.y;
-	rightmarginrect.w=MARGINRIGHT;
-	rightmarginrect.h=labelrect.h;
-	
-	leftmarginrect.x=0;
-	leftmarginrect.y=labelrect.y;
-	leftmarginrect.w=BORDERLEFT;
-	leftmarginrect.h=labelrect.h;
-	
-	bigrect.x=labelrect.x;
-	bigrect.y=labelrect.y;
-	bigrect.w=WIDTH-(BORDERLEFT);
-	bigrect.h=labelrect.h;
 
 	hiscorescroll=0;
 
