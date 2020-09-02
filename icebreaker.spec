@@ -47,18 +47,24 @@ make OPTIMIZE="$RPM_OPT_FLAGS" prefix=%{_prefix}
 %install
 make install prefix=${RPM_BUILD_ROOT}%{_prefix}
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications icebreaker.desktop
-
+mkdir ${RPM_BUILD_ROOT}%{_datadir}/metainfo
+cp metainfo.xml ${RPM_BUILD_ROOT}%{_datadir}/metainfo/org.mattdm.icebreaker.metainfo.xml
 
 %files
 %license LICENSE
 %doc README README.themes TODO ChangeLog
 %{_bindir}/icebreaker
 %{_datadir}/applications/icebreaker.desktop
+%{_datadir}/metainfo/org.mattdm.icebreaker.metainfo.xml
 %{_datadir}/icebreaker
 %{_mandir}/man6/*
 
 
 %changelog
+* Wed Sep  2 2020 Matthew Miller <mattdm@mattdm.org> - 2.1.0-1
+- update to 2.1
+- include metainfo
+
 * Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org> - 2.0.0-1
 - high scores are going to be local to each home directory; no more setgid
 - update to 2.0.0
