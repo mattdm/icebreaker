@@ -1,5 +1,5 @@
 Name:       icebreaker
-Version:    2.1.0
+Version:    2.1.1
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
@@ -9,7 +9,7 @@ License:    GPLv2+
 %if %{isprerelease}
 Source:     icebreaker-%{version}-%{release}.tar.xz
 %else
-Source:     https://mattdm.org/icebreaker/2.0.x/icebreaker-%{version}.tar.xz
+Source:     https://mattdm.org/icebreaker/2.1.x/icebreaker-%{version}.tar.xz
 %endif
 
 URL:        http://www.mattdm.org/icebreaker/
@@ -61,6 +61,9 @@ cp metainfo.xml ${RPM_BUILD_ROOT}%{_datadir}/metainfo/org.mattdm.icebreaker.meta
 
 
 %changelog
+* Tue Feb 23 2020 Matthew Miller <mattdm@mattdm.org> - 2.1.1-1
+- update to 2.1.1 to fix some more buffer overflows
+
 * Wed Sep  2 2020 Matthew Miller <mattdm@mattdm.org> - 2.1.0-1
 - update to 2.1
 - include metainfo

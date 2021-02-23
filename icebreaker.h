@@ -29,10 +29,10 @@
 /************************************************************************/
 /* Versions and so forth -- you probably shouldn't change this. */
 
-#define VERSION 2.1.0
+#define VERSION 2.1.1
 #define VERMAJOR 2
 #define VERMINOR 1
-#define VERSUB 0
+#define VERSUB 1
 
 #ifndef DEVELRELEASE
 	#define DEVELRELEASE VERMINOR & 1
