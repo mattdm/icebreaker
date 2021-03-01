@@ -1,5 +1,5 @@
 Name:       icebreaker
-Version:    2.1.1
+Version:    2.1.2
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
@@ -61,7 +61,10 @@ cp metainfo.xml ${RPM_BUILD_ROOT}%{_datadir}/metainfo/org.mattdm.icebreaker.meta
 
 
 %changelog
-* Tue Feb 23 2020 Matthew Miller <mattdm@mattdm.org> - 2.1.1-1
+* Mon Mar  1 2021 Matthew Miller <mattdm@mattdm.org> - 2.1.2-1
+- update metainfo for GNOME Software
+
+* Tue Feb 23 2021 Matthew Miller <mattdm@mattdm.org> - 2.1.1-1
 - update to 2.1.1 to fix some more buffer overflows
 
 * Wed Sep  2 2020 Matthew Miller <mattdm@mattdm.org> - 2.1.0-1
