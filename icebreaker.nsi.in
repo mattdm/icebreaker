@@ -1,6 +1,6 @@
 ; icebreaker.nsi
 ;
-; This script is used by the Nullsoft (SuperPiMP|Scriptable) Install System
+; This script is used by the Nullsoft Scriptable Install System
 ; (which works under Wine, but is open source so theoretically could be
 ; ported to run on Linux natively -- has anyone done this already?) to make
 ; the Win32 installer for IceBreaker.
@@ -18,7 +18,7 @@ CRCCheck on
 InstallDir $PROGRAMFILES\IceBreaker
 InstallDirRegKey HKLM "Software\IceBreaker" "InstallDir"
 
-LicenseText "IceBreaker is Free Software; you can redistribute or modify it under the terms of the GNU GPL. Copyright © 2000-2002 Matthew Miller <mattdm@mattdm.org>, et al." "Continue"
+LicenseText "IceBreaker is Free Software; you can redistribute or modify it under the terms of the GNU GPL. Copyright © 2000-2021 Matthew Miller <mattdm@mattdm.org>, et al." "Continue"
 LicenseData "LICENSE.txt"
 
 DirShow show
