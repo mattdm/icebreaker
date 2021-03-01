@@ -1,9 +1,9 @@
 ; icebreaker.nsi
 ;
 ; This script is used by the Nullsoft Scriptable Install System
-; (which works under Wine, but is open source so theoretically could be
-; ported to run on Linux natively -- has anyone done this already?) to make
-; the Win32 installer for IceBreaker.
+;
+; This is part of MingW on Fedora Linux, so we can cross-build
+; the installer as well as the program itself.
 
 Name "IceBreaker"
 OutFile "icebreaker-%ICEBREAKERVERSION.exe"
