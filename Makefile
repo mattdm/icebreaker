@@ -36,7 +36,7 @@ SDL_LDFLAGS := $(shell $(SDLCONFIG) --libs)
 VERSION := $(shell awk '/^#define VERSION/ { print $$3 }' icebreaker.h)
 VERDATE := $(shell date -r icebreaker.h +"%d %B %Y")
 
-CROSSTOOLSPATH=/usr/i686-w64-mingw32
+CROSSTOOLSPATH=/usr/x86_64-w64-mingw32
 # note that you almost certainly want to set wine to use the tty driver instead
 # of x11 -- can you do that on the command line?
 UNIX2DOS=unix2dos

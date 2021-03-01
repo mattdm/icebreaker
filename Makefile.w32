@@ -1,18 +1,18 @@
 # standard path for mingw32 cross compiler
 # see <http://www.libsdl.org/extras/win32/cross/README.txt>
-CROSSTOOLSPATH=/usr/i686-w64-mingw32
+CROSSTOOLSPATH=/usr/x86_64-w64-mingw32
 MINGW32BIN=$(CROSSTOOLSPATH)/bin
 
-CC=i686-w64-mingw32-gcc
-WINDRES=i686-w64-mingw32-windres
+CC=x86_64-w64-mingw32-gcc
+WINDRES=x86_64-w64-mingw32-windres
 
 SDLCONFIG=$(CROSSTOOLSPATH)/sys-root/mingw/bin/sdl-config
 
 ifndef OPTIMIZE
-  OPTIMIZE=-O3
+  OPTIMIZE=-O2
 endif
 
-CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\".\" -DHISCOREPREFIX=\".\" -DWIN32
+CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\".\" -DHISCOREPREFIX=\".\" -DWIN32 -fstack-protector
 
 SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
     level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
