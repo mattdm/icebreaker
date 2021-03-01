@@ -129,7 +129,7 @@ icebreaker-$(VERSIONSTRING).exe: icebreaker.nsi icebreaker-$(VERSIONSTRING).zip
 	unzip -b icebreaker-$(VERSIONSTRING).zip
 	touch icebreaker-$(VERSIONSTRING)/lockhelper.lck
 	(cd icebreaker-$(VERSIONSTRING); \
-	   $(MAKENSIS) ../icebreaker.nsi; \
+	   $(MAKENSIS) -NOCD ../icebreaker.nsi; \
 	   test -f icebreaker-$(VERSIONSTRING).exe)
 	mv -f icebreaker-$(VERSIONSTRING)/icebreaker-$(VERSIONSTRING).exe icebreaker-$(VERSIONSTRING).exe
 	[ -d icebreaker-$(VERSIONSTRING) ] && rm -rf icebreaker-$(VERSIONSTRING) || true	

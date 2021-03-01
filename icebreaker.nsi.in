@@ -45,7 +45,7 @@ Section "IceBreaker"
   File *.bmp
   File *.ibt
   File *.txt 
-  File *.tgz
+  File *.tar.xz
   WriteRegStr HKLM "Software\IceBreaker" "InstallDir" "$INSTDIR"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\IceBreaker" "DisplayName" "IceBreaker"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\IceBreaker" "UninstallString" '"$INSTDIR\uninstall.exe"'
@@ -81,7 +81,7 @@ Section "Uninstall"
   Delete $INSTDIR\*.bmp 
   Delete $INSTDIR\*.ibt
   Delete $INSTDIR\*.txt 
-  Delete $INSTDIR\*.tgz
+  Delete $INSTDIR\*.tar.xz
   Delete $INSTDIR\uninstall.exe
 
   IfFileExists $INSTDIR\icebreaker.cfg HaveCSFiles
