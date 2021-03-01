@@ -36,7 +36,7 @@ SDL_LDFLAGS := $(shell $(SDLCONFIG) --libs)
 VERSION := $(shell awk '/^#define VERSION/ { print $$3 }' icebreaker.h)
 VERDATE := $(shell date -r icebreaker.h +"%d %B %Y")
 
-CROSSTOOLSPATH=/usr/local/cross-tools
+CROSSTOOLSPATH=/usr/i686-w64-mingw32
 # note that you almost certainly want to set wine to use the tty driver instead
 # of x11 -- can you do that on the command line?
 UNIX2DOS=unix2dos
@@ -142,8 +142,8 @@ icebreaker-$(VERSIONSTRING).zip: icebreaker.exe icebreaker-$(VERSIONSTRING).tar.
 	mkdir icebreaker-$(VERSIONSTRING)
 	cp icebreaker.exe icebreaker-$(VERSIONSTRING)
 	cp icebreaker-$(VERSIONSTRING).tar.xz icebreaker-$(VERSIONSTRING)/icebreaker-$(VERSIONSTRING)-src.tar.xz
-	cp $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL.dll icebreaker-$(VERSIONSTRING)
-	cp $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL_mixer.dll icebreaker-$(VERSIONSTRING)
+	cp $(CROSSTOOLSPATH)/sys-root/mingw/bin/SDL.dll icebreaker-$(VERSIONSTRING)
+	cp $(CROSSTOOLSPATH)/sys-root/mingw/bin/SDL_mixer.dll icebreaker-$(VERSIONSTRING)
 	cp *.wav icebreaker-$(VERSIONSTRING)
 	cp *.bmp icebreaker-$(VERSIONSTRING)
 	cp *.png icebreaker-$(VERSIONSTRING)
@@ -165,7 +165,7 @@ osx:
 	make -f Makefile.osx
 
 icebreaker.exe: $(DISTFILES)
-	[ -f $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL.dll ]
+	[ -f $(CROSSTOOLSPATH)/sys-root/mingw/bin/SDL.dll ]
 	[ -d win32.build ] && rm -rf win32.build || true
 	mkdir win32.build
 	cp -p * win32.build || true

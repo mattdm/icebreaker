@@ -1,12 +1,12 @@
 # standard path for mingw32 cross compiler
 # see <http://www.libsdl.org/extras/win32/cross/README.txt>
-CROSSTOOLSPATH=/usr/local/cross-tools
+CROSSTOOLSPATH=/usr/i686-w64-mingw32
 MINGW32BIN=$(CROSSTOOLSPATH)/bin
 
-CC=$(MINGW32BIN)/i386-mingw32msvc-gcc
-WINDRES=$(MINGW32BIN)/i386-mingw32msvc-windres
+CC=i686-w64-mingw32-gcc
+WINDRES=i686-w64-mingw32-windres
 
-SDLCONFIG=$(CROSSTOOLSPATH)/i386-mingw32msvc/bin/sdl-config
+SDLCONFIG=$(CROSSTOOLSPATH)/sys-root/mingw/bin/sdl-config
 
 ifndef OPTIMIZE
   OPTIMIZE=-O3
