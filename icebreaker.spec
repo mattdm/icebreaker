@@ -1,9 +1,9 @@
 Name:       icebreaker
-Version:    2.1.3
+Version:    2.2.0
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
-%define     isdevelrelease 1
+%define     isdevelrelease 0
 License:    GPLv2+
 
 %if %{isprerelease}
@@ -61,6 +61,9 @@ cp metainfo.xml ${RPM_BUILD_ROOT}%{_datadir}/metainfo/org.mattdm.icebreaker.meta
 
 
 %changelog
+* Mon Mar  1 2021 Matthew Miller <mattdm@mattdm.org> - 2.2.0-1
+- made Windows work so I'm going to call this 2.2
+
 * Mon Mar  1 2021 Matthew Miller <mattdm@mattdm.org> - 2.1.3-1
 - fix metainfo oops
 
