@@ -18,11 +18,8 @@ CRCCheck on
 InstallDir $PROGRAMFILES\IceBreaker
 InstallDirRegKey HKLM "Software\IceBreaker" "InstallDir"
 
-LicenseText "IceBreaker is Free Software; you can redistribute or modify it under the terms of the GNU GPL. Copyright © 2000-2021 Matthew Miller <mattdm@mattdm.org>, et al." "Continue"
+LicenseText "IceBreaker is Free Software; you can redistribute or modify it under the terms of the GNU GPL. Copyright (c) 2000-2021 Matthew Miller <mattdm@mattdm.org>, et al." "Continue"
 LicenseData "LICENSE.txt"
-
-DirShow show
-DirText "Visit the IceBreaker web site at <http://www.mattdm.org/icebreaker/> to get more information or to check for the latest version. IceBreaker development is ongoing, and we welcome feedback and other contributions." "Where should IceBreaker be installed?"
 
 InstallColors C0C0C0 404040
 InstProgressFlags smooth colored
