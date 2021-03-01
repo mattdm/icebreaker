@@ -1,9 +1,5 @@
 Name:       icebreaker
-<<<<<<< HEAD
-Version:    2.0.2
-=======
 Version:    2.2.0
->>>>>>> 2.2
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
