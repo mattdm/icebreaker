@@ -67,7 +67,7 @@ else
     $(error .spec file has final release tag, but sets "isprerelease" to 1.  Fix that)
   endif
   ifndef OPTIMIZE
-    OPTIMIZE=-O3
+    OPTIMIZE=-O2
   endif
   VERSIONSTRING := $(VERSION)
 endif
