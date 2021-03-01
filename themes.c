@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2002 Matthew Miller <mattdm@mattdm.org>
+* Copyright (c) 2002-2020 Matthew Miller <mattdm@mattdm.org>
 *
 * <http://www.mattdm.org/icebreaker/>
 *
@@ -474,7 +474,7 @@ int getthemenumber(char** themenamelist,int numthemes,char* themename)
 
 int setrandomtheme()
 {
-	char themename[MAXTHEMENAMELENGTH];
+	char themename[MAXTHEMENAMELENGTH+1];
 	char** themelist;
 	int themecount;
 	

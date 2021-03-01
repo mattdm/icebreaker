@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2000-2002 Matthew Miller <mattdm@mattdm.org> and
+* Copyright (c) 2000-2020 Matthew Miller <mattdm@mattdm.org> and
 *   Enrico Tassi <gareuselesinge@infinito.it>
 *
 * <http://www.mattdm.org/icebreaker/>
@@ -191,7 +191,7 @@ PopupReturnType popupoptionsmenu()
 {
 	SDL_Rect menurect;
 	GameDifficultyType originaldifficulty=options.difficulty;
-	char originaltheme[MAXTHEMENAMELENGTH+1];
+	char originaltheme[MAXTHEMENAMELENGTH+11];
 	PopupReturnType rc;
 	int originalthemecl=false;
 	int recallme=false;
@@ -200,6 +200,9 @@ PopupReturnType popupoptionsmenu()
 	char * optionsmenu[OPTIONSMENULENGTH] = { "SOUND", "AUTO PAUSE", "FULL SCREEN", "DIFFICULTY", "THEME" };
 	PopupReturnType (*optionsmenufunctions[OPTIONSMENULENGTH])(char *,int) = { &menuitem_sound, &menuitem_autopause, &menuitem_fullscreen, &menuitem_difficulty, &menuitem_theme };
 
+// truncation is on purpose
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-truncation"
 	if (strlen(commandline.theme)>0)
 	{
 		snprintf(originaltheme,MAXTHEMENAMELENGTH+1,"%s",commandline.theme);
@@ -210,6 +213,7 @@ PopupReturnType popupoptionsmenu()
 		snprintf(originaltheme,MAXTHEMENAMELENGTH+1,"%s",options.theme);
 		originalthemecl=false;	
 	}
+#pragma GCC diagnostic pop	
 				
 	menurect.w=229;
 	menurect.h=7+(OPTIONSMENULENGTH*(CHARHEIGHT*2+3));
@@ -506,11 +510,16 @@ PopupReturnType menuitem_theme(char * val, int mbutton)
 
 	if (strlen(val)==0)
 	{
+	
+		
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wstringop-truncation"
 		if (strlen(commandline.theme)>0)
 			strncpy(val,commandline.theme,MAXMENUVALUELENGTH);
 		else
 			strncpy(val,options.theme,MAXMENUVALUELENGTH);
 		return POPUPDONOTHING;
+#pragma GCC diagnostic pop		
 	}
 	else
 	{

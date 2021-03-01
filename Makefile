@@ -20,27 +20,28 @@ ifndef bindir
 endif
 
 
-CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\"
+CFLAGS=-Wall -Werror $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\"
 
 SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
     level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
     menu.c options.c fullscreen.c themes.c event.c titlebar.c benchmark.c \
     misc.c lock.c delay.c
 
-DISTFILES=$(wildcard *.c *.h *.bmp *.ibt *.wav *.sh *.rc *.ico *.desktop *.man.in *.nsi.in *.spec README* TODO LICENSE INSTALL ChangeLog Makefile*)
+DISTFILES=$(wildcard *.c *.h *.bmp *.png *.ibt *.wav *.sh *.rc *.ico *.desktop *.man.in *.nsi.in *.spec README* TODO LICENSE INSTALL ChangeLog Makefile*)
 
 SDL_MIXER=-lSDL_mixer
 SDL_LIB=$(SDL_MIXER) $(SDL_LDFLAGS)
 SDL_CFLAGS := $(shell $(SDLCONFIG) --cflags)
 SDL_LDFLAGS := $(shell $(SDLCONFIG) --libs)
-VERSION := $(shell awk '/^\#define VERSION/ { print $$3 }' icebreaker.h)
+VERSION := $(shell awk '/^#define VERSION/ { print $$3 }' icebreaker.h)
 VERDATE := $(shell date -r icebreaker.h +"%d %B %Y")
 
-CROSSTOOLSPATH=/usr/local/cross-tools
-# note that you almost certainly want to set wine to use the tty driver instead
-# of x11 -- can you do that on the command line?
+WINARCH=i686
+CROSSTOOLSPATH=/usr/$(WINARCH)-w64-mingw32
 UNIX2DOS=unix2dos
-MAKENSIS=wine /usr/local/NSIS/makensis.exe
+MAKENSIS=makensis
+WINDLLS=SDL.dll SDL_mixer.dll libgcc_s_dw2-1.dll libvorbisfile-3.dll libvorbis-0.dll libogg-0.dll libssp-0.dll libwinpthread-1.dll
+export WINARCH
 
 RPMARCH := $(shell  rpm --eval %{_arch} )
 RPMOPTS=
@@ -67,7 +68,7 @@ else
     $(error .spec file has final release tag, but sets "isprerelease" to 1.  Fix that)
   endif
   ifndef OPTIMIZE
-    OPTIMIZE=-O3
+    OPTIMIZE=-O2
   endif
   VERSIONSTRING := $(VERSION)
 endif
@@ -129,7 +130,7 @@ icebreaker-$(VERSIONSTRING).exe: icebreaker.nsi icebreaker-$(VERSIONSTRING).zip
 	unzip -b icebreaker-$(VERSIONSTRING).zip
 	touch icebreaker-$(VERSIONSTRING)/lockhelper.lck
 	(cd icebreaker-$(VERSIONSTRING); \
-	   $(MAKENSIS) ../icebreaker.nsi; \
+	   $(MAKENSIS) -NOCD -INPUTCHARSET UTF8 ../icebreaker.nsi; \
 	   test -f icebreaker-$(VERSIONSTRING).exe)
 	mv -f icebreaker-$(VERSIONSTRING)/icebreaker-$(VERSIONSTRING).exe icebreaker-$(VERSIONSTRING).exe
 	[ -d icebreaker-$(VERSIONSTRING) ] && rm -rf icebreaker-$(VERSIONSTRING) || true	
@@ -142,10 +143,10 @@ icebreaker-$(VERSIONSTRING).zip: icebreaker.exe icebreaker-$(VERSIONSTRING).tar.
 	mkdir icebreaker-$(VERSIONSTRING)
 	cp icebreaker.exe icebreaker-$(VERSIONSTRING)
 	cp icebreaker-$(VERSIONSTRING).tar.xz icebreaker-$(VERSIONSTRING)/icebreaker-$(VERSIONSTRING)-src.tar.xz
-	cp $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL.dll icebreaker-$(VERSIONSTRING)
-	cp $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL_mixer.dll icebreaker-$(VERSIONSTRING)
+	for dll in $(WINDLLS); do cp $(CROSSTOOLSPATH)/sys-root/mingw/bin/$$dll icebreaker-$(VERSIONSTRING); done
 	cp *.wav icebreaker-$(VERSIONSTRING)
 	cp *.bmp icebreaker-$(VERSIONSTRING)
+	cp *.png icebreaker-$(VERSIONSTRING)
 	for i in *.ibt; do $(UNIX2DOS) -n $$i icebreaker-$(VERSIONSTRING)/$$i; done
 	$(UNIX2DOS) -n ChangeLog icebreaker-$(VERSIONSTRING)/ChangeLog.txt
 	$(UNIX2DOS) -n LICENSE icebreaker-$(VERSIONSTRING)/LICENSE.txt
@@ -164,7 +165,7 @@ osx:
 	make -f Makefile.osx
 
 icebreaker.exe: $(DISTFILES)
-	[ -f $(CROSSTOOLSPATH)/i386-mingw32msvc/lib/SDL.dll ]
+	[ -f $(CROSSTOOLSPATH)/sys-root/mingw/bin/SDL.dll ]
 	[ -d win32.build ] && rm -rf win32.build || true
 	mkdir win32.build
 	cp -p * win32.build || true
@@ -192,7 +193,7 @@ themes-install: install-themes
 
 install-themes:
 	install -m 644 *.ibt $(datadir)/icebreaker
-	install -m 644 *.wav *.bmp $(datadir)/icebreaker
+	install -m 644 *.wav *.bmp *.png $(datadir)/icebreaker
 
 install-bin: icebreaker
 	install -m 755 icebreaker $(bindir)

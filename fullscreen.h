@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2001-2002 Matthew Miller <mattdm@mattdm.org> 
+* Copyright (c) 2001-2020 Matthew Miller <mattdm@mattdm.org> 
 *
 * <http://www.mattdm.org/icebreaker/>
 *

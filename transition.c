@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2000-2002 Matthew Miller <mattdm@mattdm.org>
+* Copyright (c) 2000-2020 Matthew Miller <mattdm@mattdm.org>
 *
 * <http://www.mattdm.org/icebreaker/>
 *
@@ -85,7 +85,7 @@ int intermission(ScoreSheet * levelscore, int nextlevel)
 
 int gameover(long finalscore)
 {
-	int done=false; int quit=false;
+	int quit=false;
 	SDL_Event event;
 	SDL_Rect loserrect, finalrect;
 
@@ -106,7 +106,7 @@ int gameover(long finalscore)
 
 	// clear any pending events
 	SDL_Delay(10); // needed? probably not.
-	while (pollevent(&event)) if (event.type == SDL_QUIT) { done=true; quit=true; }
+	while (pollevent(&event)) if (event.type == SDL_QUIT) { quit=true; }
 
 	if (!checkhiscore(finalscore))
 		setcursor(CURSORCLICK);
@@ -165,30 +165,29 @@ int scrolltext(char * firsttext, SDL_Rect* firstrect, Uint32 firstcolor, char * 
 	while (!done) 
 	{
 		while(pollevent(&event));
+
+		if (event.type == SDL_QUIT)
 		{
-			if (event.type == SDL_QUIT)
+			done=true; quit=true;
+		}
+		else if (event.type==SDL_MOUSEBUTTONDOWN)
+		{
+			if (event.button.button==1)
 			{
-				done=true; quit=true;
+					done=true;
 			}
-			else if (event.type==SDL_MOUSEBUTTONDOWN)
+		}
+		else if (event.type == SDL_KEYUP)
+		{
+			switch(translatekeyevent(&event))
 			{
-				if (event.button.button==1)
-				{
-						done=true;
-				}
-			}
-			else if (event.type == SDL_KEYUP)
-			{
-				switch(translatekeyevent(&event))
-				{
-					case KEYCANCEL:     // falls through
-					case KEYMENU:       // falls through
-					case KEYSWITCHLINE: // falls through
-					case KEYSTARTLINE:  
-						done=true;
-					default:
-					break;
-				}
+				case KEYCANCEL:     // falls through
+				case KEYMENU:       // falls through
+				case KEYSWITCHLINE: // falls through
+				case KEYSTARTLINE:  
+					done=true;
+				default:
+				break;
 			}
 		}
 		

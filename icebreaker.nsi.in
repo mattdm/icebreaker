@@ -1,9 +1,9 @@
 ; icebreaker.nsi
 ;
-; This script is used by the Nullsoft (SuperPiMP|Scriptable) Install System
-; (which works under Wine, but is open source so theoretically could be
-; ported to run on Linux natively -- has anyone done this already?) to make
-; the Win32 installer for IceBreaker.
+; This script is used by the Nullsoft Scriptable Install System
+;
+; This is part of MingW on Fedora Linux, so we can cross-build
+; the installer as well as the program itself.
 
 Name "IceBreaker"
 OutFile "icebreaker-%ICEBREAKERVERSION.exe"
@@ -18,11 +18,8 @@ CRCCheck on
 InstallDir $PROGRAMFILES\IceBreaker
 InstallDirRegKey HKLM "Software\IceBreaker" "InstallDir"
 
-LicenseText "IceBreaker is Free Software; you can redistribute or modify it under the terms of the GNU GPL. Copyright © 2000-2002 Matthew Miller <mattdm@mattdm.org>, et al." "Continue"
+LicenseText "IceBreaker is Free Software; you can redistribute or modify it under the terms of the GNU GPL. Copyright (c) 2000-2021 Matthew Miller <mattdm@mattdm.org>, et al." "Continue"
 LicenseData "LICENSE.txt"
-
-DirShow show
-DirText "Visit the IceBreaker web site at <http://www.mattdm.org/icebreaker/> to get more information or to check for the latest version. IceBreaker development is ongoing, and we welcome feedback and other contributions." "Where should IceBreaker be installed?"
 
 InstallColors C0C0C0 404040
 InstProgressFlags smooth colored
@@ -45,7 +42,7 @@ Section "IceBreaker"
   File *.bmp
   File *.ibt
   File *.txt 
-  File *.tgz
+  File *.tar.xz
   WriteRegStr HKLM "Software\IceBreaker" "InstallDir" "$INSTDIR"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\IceBreaker" "DisplayName" "IceBreaker"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\IceBreaker" "UninstallString" '"$INSTDIR\uninstall.exe"'
@@ -81,7 +78,7 @@ Section "Uninstall"
   Delete $INSTDIR\*.bmp 
   Delete $INSTDIR\*.ibt
   Delete $INSTDIR\*.txt 
-  Delete $INSTDIR\*.tgz
+  Delete $INSTDIR\*.tar.xz
   Delete $INSTDIR\uninstall.exe
 
   IfFileExists $INSTDIR\icebreaker.cfg HaveCSFiles

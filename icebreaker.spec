@@ -1,5 +1,9 @@
 Name:       icebreaker
+<<<<<<< HEAD
 Version:    2.0.2
+=======
+Version:    2.2.0
+>>>>>>> 2.2
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
@@ -9,7 +13,7 @@ License:    GPLv2+
 %if %{isprerelease}
 Source:     icebreaker-%{version}-%{release}.tar.xz
 %else
-Source:     https://mattdm.org/icebreaker/2.0.x/icebreaker-%{version}.tar.xz
+Source:     https://mattdm.org/icebreaker/2.1.x/icebreaker-%{version}.tar.xz
 %endif
 
 URL:        http://www.mattdm.org/icebreaker/
@@ -47,18 +51,36 @@ make OPTIMIZE="$RPM_OPT_FLAGS" prefix=%{_prefix}
 %install
 make install prefix=${RPM_BUILD_ROOT}%{_prefix}
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications icebreaker.desktop
-
+mkdir ${RPM_BUILD_ROOT}%{_datadir}/metainfo
+cp metainfo.xml ${RPM_BUILD_ROOT}%{_datadir}/metainfo/org.mattdm.icebreaker.metainfo.xml
 
 %files
 %license LICENSE
 %doc README README.themes TODO ChangeLog
 %{_bindir}/icebreaker
 %{_datadir}/applications/icebreaker.desktop
+%{_datadir}/metainfo/org.mattdm.icebreaker.metainfo.xml
 %{_datadir}/icebreaker
 %{_mandir}/man6/*
 
 
 %changelog
+* Mon Mar  1 2021 Matthew Miller <mattdm@mattdm.org> - 2.2.0-1
+- made Windows work so I'm going to call this 2.2
+
+* Mon Mar  1 2021 Matthew Miller <mattdm@mattdm.org> - 2.1.3-1
+- fix metainfo oops
+
+* Mon Mar  1 2021 Matthew Miller <mattdm@mattdm.org> - 2.1.2-1
+- update metainfo for GNOME Software
+
+* Tue Feb 23 2021 Matthew Miller <mattdm@mattdm.org> - 2.1.1-1
+- update to 2.1.1 to fix some more buffer overflows
+
+* Wed Sep  2 2020 Matthew Miller <mattdm@mattdm.org> - 2.1.0-1
+- update to 2.1
+- include metainfo
+
 * Sun Aug 30 2020 Matthew Miller <mattdm@mattdm.org> - 2.0.2-1
 - minor tweaks
 

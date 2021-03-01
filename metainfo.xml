@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.mattdm.icebreaker</id>
+  
+  <name>IceBreaker</name>
+  <summary>An addictive action-puzzle game involving bouncing penguins</summary>
+  
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  
+  <description>
+    <p>
+      IceBreaker is an action-puzzle game in which you must capture penguins from an Antarctic iceberg so they can be shipped to Finland, where they are essential to a secret plot for world domination. To earn the highest Geek Cred, trap them in the smallest space in the shortest time while losing the fewest lives.
+    </p>
+    <p>
+      IceBreaker was inspired by (but is far from an exact clone of) Jezzball by Dima Pavlovsky.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">icebreaker.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://mattdm.org/icebreaker/appstream/screenshot-title.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://mattdm.org/icebreaker/appstream/screenshot-mid-game.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://mattdm.org/icebreaker/appstream/screenshot-level5-jz-like.png</image>
+    </screenshot>
+  </screenshots>
+</component>
