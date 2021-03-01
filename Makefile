@@ -40,6 +40,7 @@ WINARCH=i686
 CROSSTOOLSPATH=/usr/$(WINARCH)-w64-mingw32
 UNIX2DOS=unix2dos
 MAKENSIS=makensis
+WINDLLS=SDL.dll SDL_mixer.dll libgcc_s_dw2-1.dll libvorbisfile-3.dll libvorbis-0.dll libogg-0.dll libssp-0.dll libwinpthread-1.dll
 export WINARCH
 
 RPMARCH := $(shell  rpm --eval %{_arch} )
@@ -142,8 +143,7 @@ icebreaker-$(VERSIONSTRING).zip: icebreaker.exe icebreaker-$(VERSIONSTRING).tar.
 	mkdir icebreaker-$(VERSIONSTRING)
 	cp icebreaker.exe icebreaker-$(VERSIONSTRING)
 	cp icebreaker-$(VERSIONSTRING).tar.xz icebreaker-$(VERSIONSTRING)/icebreaker-$(VERSIONSTRING)-src.tar.xz
-	cp $(CROSSTOOLSPATH)/sys-root/mingw/bin/SDL.dll icebreaker-$(VERSIONSTRING)
-	cp $(CROSSTOOLSPATH)/sys-root/mingw/bin/SDL_mixer.dll icebreaker-$(VERSIONSTRING)
+	for dll in $(WINDLLS); do cp $(CROSSTOOLSPATH)/sys-root/mingw/bin/$$dll icebreaker-$(VERSIONSTRING); done
 	cp *.wav icebreaker-$(VERSIONSTRING)
 	cp *.bmp icebreaker-$(VERSIONSTRING)
 	cp *.png icebreaker-$(VERSIONSTRING)
