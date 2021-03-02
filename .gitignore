@@ -1,4 +1,8 @@
 icebreaker
 icebreaker.6
 *.xz
+*.zip
+*.exe
+*.nsi
+*.rpm
 *.[od]
