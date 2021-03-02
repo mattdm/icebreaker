@@ -17,6 +17,9 @@
     </p>
   </description>
   
+  <url type="homepage">https://mattdm.org/icebreaker/</url>
+  <url type="bugtracker">https://github.com/mattdm/icebreaker/issues</url>
+
   <launchable type="desktop-id">icebreaker.desktop</launchable>
   <screenshots>
     <screenshot type="default">
@@ -29,4 +32,8 @@
       <image>https://mattdm.org/icebreaker/appstream/screenshot-level5-jz-like.png</image>
     </screenshot>
   </screenshots>
+
+  <developer_name>Matthew Miller</developer_name>
+  <update_contact>mattdm_AT_mattdm.org</update_contact>
+
 </component>
