@@ -34,7 +34,7 @@ SDL_LIB=$(SDL_MIXER) $(SDL_LDFLAGS)
 SDL_CFLAGS := $(shell $(SDLCONFIG) --cflags)
 SDL_LDFLAGS := $(shell $(SDLCONFIG) --libs)
 VERSION := $(shell awk '/^#define VERSION/ { print $$3 }' icebreaker.h)
-VERDATE := $(shell date -r icebreaker.h +"%d %B %Y")
+VERDATE := $(shell LC_ALL=C date -u -r icebreaker.h +"%d %B %Y")
 
 WINARCH=i686
 CROSSTOOLSPATH=/usr/$(WINARCH)-w64-mingw32
