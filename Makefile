@@ -173,7 +173,7 @@ icebreaker.exe: $(DISTFILES)
 	[ -d win32.build ] && rm -rf win32.build || true
 
 icebreaker:	$(SRC:.c=.o)
-	$(CC) $(CFLAGS) $^ -o icebreaker $(SDL_LIB)
+	$(CC) $(CFLAGS) $^ -o icebreaker $(SDL_LIB) $(LDFLAGS)
 
 man: icebreaker.6
 
