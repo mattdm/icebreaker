@@ -20,7 +20,7 @@ ifndef bindir
 endif
 
 
-CFLAGS=-Wall -Werror $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\"
+CFLAGS+=-Wall -Werror $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\"
 
 SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
     level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
@@ -173,7 +173,7 @@ icebreaker.exe: $(DISTFILES)
 	[ -d win32.build ] && rm -rf win32.build || true
 
 icebreaker:	$(SRC:.c=.o)
-	$(CC) $(CFLAGS) $^ -o icebreaker $(SDL_LIB)
+	$(CC) $(CFLAGS) $^ -o icebreaker $(SDL_LIB) $(LDFLAGS)
 
 man: icebreaker.6
 
