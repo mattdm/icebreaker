@@ -191,14 +191,14 @@ install-mkdirs:
 
 themes-install: install-themes
 
-install-themes:
+install-themes: install-mkdirs
 	install -m 644 *.ibt $(datadir)/icebreaker
 	install -m 644 *.wav *.bmp *.png $(datadir)/icebreaker
 
-install-bin: icebreaker
+install-bin: install-mkdirs icebreaker
 	install -m 755 icebreaker $(bindir)
 
-install-man: icebreaker.6
+install-man: install-mkdirs icebreaker.6
 	install -m 644 icebreaker.6 $(mandir)/man6
 
 install: all install-mkdirs install-themes install-bin install-man
