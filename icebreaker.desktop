@@ -5,3 +5,4 @@ Comment=addictive action-puzzle game involving bouncing penguins
 Exec=icebreaker
 Icon=/usr/share/icebreaker/icebreaker_128.png
 Terminal=false
+Keywords=puzzle;game;penguins;ice;
