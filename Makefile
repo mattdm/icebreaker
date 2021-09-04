@@ -1,6 +1,6 @@
 CC=gcc
 
-SDLCONFIG=sdl-config
+PKG_CONFIG ?= pkg-config
 
 ifndef prefix
   prefix=/usr/local
@@ -29,10 +29,10 @@ SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
 
 DISTFILES=$(wildcard *.c *.h *.bmp *.png *.ibt *.wav *.sh *.rc *.ico *.desktop *.man.in *.nsi.in *.spec README* TODO LICENSE INSTALL ChangeLog Makefile*)
 
-SDL_MIXER=-lSDL_mixer
+SDL_MIXER := $(shell $(PKG_CONFIG) SDL_mixer --libs)
 SDL_LIB=$(SDL_MIXER) $(SDL_LDFLAGS)
-SDL_CFLAGS := $(shell $(SDLCONFIG) --cflags)
-SDL_LDFLAGS := $(shell $(SDLCONFIG) --libs)
+SDL_CFLAGS := $(shell $(PKG_CONFIG) sdl --cflags)
+SDL_LDFLAGS := $(shell $(PKG_CONFIG) sdl --libs)
 VERSION := $(shell awk '/^#define VERSION/ { print $$3 }' icebreaker.h)
 VERDATE := $(shell date -r icebreaker.h +"%d %B %Y")
 
