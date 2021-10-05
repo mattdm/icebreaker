@@ -1,6 +1,6 @@
 /*
 * IceBreaker
-* Copyright (c) 2000-2020 Matthew Miller <mattdm@mattdm.org>
+* Copyright (c) 2000-2021 Matthew Miller <mattdm@mattdm.org>
 *
 * <http://www.mattdm.org/icebreaker/>
 *
@@ -29,10 +29,10 @@
 /************************************************************************/
 /* Versions and so forth -- you probably shouldn't change this. */
 
-#define VERSION 2.2.0
+#define VERSION 2.2.1
 #define VERMAJOR 2
 #define VERMINOR 2
-#define VERSUB 0
+#define VERSUB 1
 
 #ifndef DEVELRELEASE
 	#define DEVELRELEASE VERMINOR & 1

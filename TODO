@@ -7,12 +7,12 @@ Next things that should be done
 4. Modernize the Windows install script.
 
 
-Also, there's a performance optimization I made which either created or the
-"collapsing iceberg" bug (see below). I bet with computers being several
-times faster than a Pentium 75, I can just back out the optimization. If I
-can remember the details (this was in CVS and I lost all that, which is
-probably mostly fine because my commit messages did not follow
-whatchamightcall "best practices").
+Also, there's a performance optimization I made which either created or
+uncovered the "collapsing iceberg" bug (see below). I bet with computers
+being several times faster than a Pentium 75, I can just back out the
+optimization. If I can remember the details (this was in CVS and I lost all
+that, which is probably mostly fine because my commit messages did not
+follow whatchamightcall "best practices").
 
 Below this, find the _previous_ todo list, circa 2003. Some of these are
 still good ideas. Other parts, like the BeOS port, can probably be dropped.

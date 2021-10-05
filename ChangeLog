@@ -1,3 +1,7 @@
+October 2nd, 2021: released 2.2.1
+ - minor build improvements from Reiner Herrmann (thanks!)
+ - keywords in desktop file (also thanks Reiner!)
+
 March 1st, 2021: released 2.2.0
  - clean up some more buffer overflows
  - add AppStream metainfo
