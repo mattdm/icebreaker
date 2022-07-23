@@ -33,6 +33,13 @@
     </screenshot>
   </screenshots>
 
+  <releases>
+    <release version="2.2.1" date="2021-10-02" />
+    <release version="2.2.0" date="2021-03-01" />
+  </releases>
+
+  <content_rating type="oars-1.1" />
+
   <developer_name>Matthew Miller</developer_name>
   <update_contact>mattdm_AT_mattdm.org</update_contact>
 
