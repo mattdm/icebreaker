@@ -147,7 +147,7 @@ int settheme(char* themename)
 	char themefilename[256]; // fix -- use defined OS constant (here and throughout this function)
 	char optbuf[21];
 	char valbuf[256];
-	char loadfilebuf[256];
+	char loadfilebuf[512];
 	int r,g,b;
 	ThemeColorsType foundcolor;
 	
@@ -338,7 +338,7 @@ int settheme(char* themename)
 						               "We'll try to load it anyway, but don't be surpised if there's a problem.\n"
 						               "(Filename is %s)\n",themename,valbuf);
 					}
-					snprintf(loadfilebuf, 256,"%s/%s",DATAPREFIX,valbuf);
+					snprintf(loadfilebuf, 512,"%s/%s",DATAPREFIX,valbuf);
 					spriteimage=loadsprite(themename,loadfilebuf);
 				}
 				else if (!strcmp(optbuf,"spritemirrorbitmap"))
@@ -349,7 +349,7 @@ int settheme(char* themename)
 						               "We'll try to load it anyway, but don't be surpised if there's a problem.\n"
 						               "(Filename is %s)\n",themename,valbuf);
 					}
-					snprintf(loadfilebuf, 256,"%s/%s",DATAPREFIX,valbuf);
+					snprintf(loadfilebuf, 512,"%s/%s",DATAPREFIX,valbuf);
 					spritemirrorimage=loadsprite(themename,loadfilebuf);
 				}
 				else if (!strcmp(optbuf,"soundouch"))
@@ -360,7 +360,7 @@ int settheme(char* themename)
 						               "We'll try to load it anyway, but don't be surpised if there's a problem.\n"
 						               "(Filename is %s)\n",themename,valbuf);
 					}
-					snprintf(loadfilebuf, 256,"%s/%s",DATAPREFIX,valbuf);
+					snprintf(loadfilebuf, 512,"%s/%s",DATAPREFIX,valbuf);
 					loadsounds(themename,loadfilebuf,NULL);
 				}
 				else if (!strcmp(optbuf,"soundcrash"))
@@ -371,7 +371,7 @@ int settheme(char* themename)
 						               "We'll try to load it anyway, but don't be surpised if there's a problem.\n"
 						               "(Filename is %s)\n",themename,valbuf);
 					}
-					snprintf(loadfilebuf, 256,"%s/%s",DATAPREFIX,valbuf);
+					snprintf(loadfilebuf, 512,"%s/%s",DATAPREFIX,valbuf);
 					loadsounds(themename,NULL,loadfilebuf);
 				}
 			}
