@@ -163,7 +163,7 @@ int main(int argc,char** argv)
 	int level=0;
 	ScoreSheet levelscore;
 	long totalscore=0;
-	char windowtitle[38];
+	char windowtitle[39];
 	LevelExitType levelresult;
 	int newuser=false;
 	int rc=0;
@@ -206,13 +206,13 @@ int main(int argc,char** argv)
 		switch (options.difficulty)
 		{
 			case NORMAL:
-				snprintf(windowtitle,38,"IceBreaker -- Level %d",level);
+				snprintf(windowtitle,39,"IceBreaker -- Level %d",level);
 			break;
 			case HARD:
-				snprintf(windowtitle,38,"IceBreaker -- Level %d (Hard)",level);
+				snprintf(windowtitle,39,"IceBreaker -- Level %d (Hard)",level);
 			break;
 			case EASY:
-				snprintf(windowtitle,38,"IceBreaker -- Level %d (Easy)",level);
+				snprintf(windowtitle,39,"IceBreaker -- Level %d (Easy)",level);
 			break;
 		}			
 		drawtitlebar(windowtitle);

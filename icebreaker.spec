@@ -1,5 +1,5 @@
 Name:       icebreaker
-Version:    2.2.1
+Version:    2.2.2
 Release:    1
 Summary:    An addictive action-puzzle game involving bouncing penguins
 %define     isprerelease 0
@@ -61,6 +61,9 @@ cp metainfo.xml ${RPM_BUILD_ROOT}%{_datadir}/metainfo/org.mattdm.icebreaker.meta
 
 
 %changelog
+* Thu Jul 13 2023 Matthew Miller <mattdm@mattdm.org> - 2.2.2-1
+- fix some really dumb stuff :)
+
 * Sun Oct  2 2021 Matthew Miller <mattdm@mattdm.org> - 2.2.1-1
 - minor build improvements via PR from reinerh
 
