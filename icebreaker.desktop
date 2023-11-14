@@ -6,3 +6,4 @@ Exec=icebreaker
 Icon=/usr/share/icebreaker/icebreaker_128.png
 Terminal=false
 Keywords=puzzle;game;penguins;ice;
+Categories=Game;LogicGame;
