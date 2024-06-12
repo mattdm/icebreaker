@@ -12,7 +12,7 @@ ifndef OPTIMIZE
   OPTIMIZE=-O2
 endif
 
-CFLAGS=-Wall -Werror -Wno-error=pointer-sign $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\".\" -DHISCOREPREFIX=\".\" -DWIN32 -fstack-protector
+CFLAGS+=-Wall -Wno-error=pointer-sign $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\".\" -DHISCOREPREFIX=\".\" -DWIN32 -fstack-protector
 
 SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
     level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
