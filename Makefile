@@ -43,7 +43,7 @@ MAKENSIS=makensis
 WINDLLS=SDL.dll SDL_mixer.dll libgcc_s_dw2-1.dll libvorbisfile-3.dll libvorbis-0.dll libogg-0.dll libssp-0.dll libwinpthread-1.dll
 export WINARCH
 
-RPMARCH := $(shell  rpm --eval %{_arch} )
+RPMARCH := $(shell rpm --eval %{_arch} 2>/dev/null || echo none)
 RPMOPTS=
 RPMCRAZYDEFINES := --define "_topdir %(pwd)/rpmbuild" --define "_sourcedir %(pwd)" --define "_specdir %(pwd)"  --define "_tmppath %(pwd)/rpmbuild/tmp/"  --define "_builddir %(pwd)/rpmbuild/build/" --define "_rpmdir %(pwd)" --define "_srcrpmdir %(pwd)" --define "_rpmfilename %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm"
 
