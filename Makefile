@@ -20,7 +20,7 @@ ifndef bindir
 endif
 
 
-CFLAGS+=-Wall -Werror $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\"
+CFLAGS+=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\"
 
 SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
     level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
@@ -43,7 +43,7 @@ MAKENSIS=makensis
 WINDLLS=SDL.dll SDL_mixer.dll libgcc_s_dw2-1.dll libvorbisfile-3.dll libvorbis-0.dll libogg-0.dll libssp-0.dll libwinpthread-1.dll
 export WINARCH
 
-RPMARCH := $(shell  rpm --eval %{_arch} )
+RPMARCH := $(shell rpm --eval %{_arch} 2>/dev/null || echo none)
 RPMOPTS=
 RPMCRAZYDEFINES := --define "_topdir %(pwd)/rpmbuild" --define "_sourcedir %(pwd)" --define "_specdir %(pwd)"  --define "_tmppath %(pwd)/rpmbuild/tmp/"  --define "_builddir %(pwd)/rpmbuild/build/" --define "_rpmdir %(pwd)" --define "_srcrpmdir %(pwd)" --define "_rpmfilename %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm"
 
@@ -173,7 +173,7 @@ icebreaker.exe: $(DISTFILES)
 	[ -d win32.build ] && rm -rf win32.build || true
 
 icebreaker:	$(SRC:.c=.o)
-	$(CC) $(CFLAGS) $^ -o icebreaker $(SDL_LIB) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o icebreaker $(SDL_LIB)
 
 man: icebreaker.6
 
