@@ -44,7 +44,7 @@ extern int checkiflevelatstart(void);
 // FIX -- these shouldn't need to be globals
 extern Line line1;
 extern Line line2;
-extern Penguin flock[MAXPENGUINS];
+extern Penguin pg_flock[MAXPENGUINS];
 extern int penguincount;
 
 

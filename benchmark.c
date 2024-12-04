@@ -76,7 +76,7 @@ int benchmark(void)
 	char fpstext[20];
 	int done = false;
 	
-	Penguin flock[MAXPENGUINS];
+	Penguin pg_flock[MAXPENGUINS];
 	Uint32 starttime, endtime, tmptime, framecount, tmpframecount;
 
 
@@ -87,7 +87,7 @@ int benchmark(void)
 	
 	for (i=0;i<penguincount;i++)
 	{
-		flock[i] = createpenguin();
+		pg_flock[i] = createpenguin();
 	}
 
 	framecount=0;
@@ -124,17 +124,17 @@ int benchmark(void)
 		
 		for (i=0;i<penguincount;i+=2)
 		{
-			soil(flock[i].geom); // mark the penguin's old position as dirty
-			movepenguin(&flock[i]);
-			soil(flock[i].geom); // mark the penguin's new position as dirty too (it will be soon...)
-			savebehindpenguin(&flock[i]);
+			soil(pg_flock[i].geom); // mark the penguin's old position as dirty
+			movepenguin(&pg_flock[i]);
+			soil(pg_flock[i].geom); // mark the penguin's new position as dirty too (it will be soon...)
+			savebehindpenguin(&pg_flock[i]);
 		}
 
 		
 		// actually draw
 		for (i=0;i<penguincount;i+=2)
 		{
-			drawpenguin(&flock[i]);
+			drawpenguin(&pg_flock[i]);
 		}
 		
 		// update screen
@@ -142,7 +142,7 @@ int benchmark(void)
 
 		for (i=0;i<penguincount;i+=2)
 		{
-			erasepenguin(&flock[i]);
+			erasepenguin(&pg_flock[i]);
 		}
 		
 		if (SDL_GetTicks() >= tmptime+1000)
@@ -166,7 +166,7 @@ int benchmark(void)
 	while (penguincount)
 	{	
 		penguincount--;
-		deletepenguin(&flock[penguincount]);
+		deletepenguin(&pg_flock[penguincount]);
 	}
 
 	return(false);

@@ -49,7 +49,7 @@ Line line1;
 Line line2;
 
 // fix -- good candidate for dynamic memory allocation
-Penguin flock[MAXPENGUINS];
+Penguin pg_flock[MAXPENGUINS];
 int penguincount=0;
 
 static int lives=0;
@@ -175,7 +175,7 @@ LevelExitType playlevel(int level, long oldscore, ScoreSheet * levelscore)
 
 	for (i=0;i<penguincount;i++)
 	{
-		flock[i] = createpenguin();
+		pg_flock[i] = createpenguin();
 	}
 
 	updatestatuslives(lives);
@@ -528,18 +528,18 @@ LevelExitType playlevel(int level, long oldscore, ScoreSheet * levelscore)
 		for (i=0;i<penguincount;i++)
 		{
 			
-			soil(flock[i].geom); // mark the penguin's old position as dirty
-			movepenguin(&flock[i]);
+			soil(pg_flock[i].geom); // mark the penguin's old position as dirty
+			movepenguin(&pg_flock[i]);
 		
-			soil(flock[i].geom); // mark the penguin's new position as dirty too (it will be soon...)
-			savebehindpenguin(&flock[i]);
+			soil(pg_flock[i].geom); // mark the penguin's new position as dirty too (it will be soon...)
+			savebehindpenguin(&pg_flock[i]);
 		}
 		
 
 		// actually draw
 		for (i=0;i<penguincount;i++)
 		{
-			drawpenguin(&flock[i]);
+			drawpenguin(&pg_flock[i]);
 		}
 
 		if (domenuflag)
@@ -595,7 +595,7 @@ LevelExitType playlevel(int level, long oldscore, ScoreSheet * levelscore)
 		// clear for next update
 		for (i=0;i<penguincount;i++)
 		{
-			erasepenguin(&flock[i]);
+			erasepenguin(&pg_flock[i]);
 		}
 		
 		if (lives<=0) // game over
@@ -632,8 +632,8 @@ LevelExitType playlevel(int level, long oldscore, ScoreSheet * levelscore)
 	// and then erase them so we don't leak surfaces.
 	for (i=0;i<penguincount;i++)
 	{
-		drawpenguin(&flock[i]);
-		deletepenguin(&flock[i]);
+		drawpenguin(&pg_flock[i]);
+		deletepenguin(&pg_flock[i]);
 	}
 
 	clean();
@@ -662,9 +662,9 @@ void redrawwholelevel()
 	
 	for (i=0;i<penguincount;i++)
 	{
-		resetpenguinimage(&flock[i]);
-		savebehindpenguin(&flock[i]);
-		drawpenguin(&flock[i]);
+		resetpenguinimage(&pg_flock[i]);
+		savebehindpenguin(&pg_flock[i]);
+		drawpenguin(&pg_flock[i]);
 	}
 
 }

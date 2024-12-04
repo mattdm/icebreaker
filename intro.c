@@ -112,7 +112,7 @@ int intro(void)
 	
 	int done = false;
 	
-	Penguin flock[100];
+	Penguin pg_flock[100];
 	Penguin tux;
 	
 	SDL_Event event;
@@ -259,144 +259,144 @@ int intro(void)
 		else if (letterstep==11)
 		{
 			//B
-			flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(12)); penguincount++; 
-			flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(12)); penguincount++; 
+			pg_flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(0),LYPOS(16)); penguincount++;
 
-			flock[penguincount]=createpenguinxy(LXPOS(1),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(2),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(1),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(2),LYPOS(11)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(1),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(2),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(1),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(2),LYPOS(13)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(1),LYPOS(16)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(2),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(1),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(2),LYPOS(16)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(3),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(3),LYPOS(12)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(3),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(3),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(3),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(3),LYPOS(15)); penguincount++;
 			
 			//R
-			flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(5),LYPOS(16)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(6),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(7),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(6),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(7),LYPOS(11)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(6),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(7),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(6),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(7),LYPOS(13)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(12)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(14)); penguincount++;
- 			flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(14)); penguincount++;
+ 			pg_flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(8),LYPOS(16)); penguincount++;
 			
 			//E
-			flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(10),LYPOS(16)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(11),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(12),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(11),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(12),LYPOS(11)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(11),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(12),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(11),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(12),LYPOS(13)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(11),LYPOS(16)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(12),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(11),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(12),LYPOS(16)); penguincount++;
 			
 			//A
-			flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(14),LYPOS(16)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(17),LYPOS(16)); penguincount++;
 
-			flock[penguincount]=createpenguinxy(LXPOS(15),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(16),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(15),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(16),LYPOS(11)); penguincount++;
 
-			flock[penguincount]=createpenguinxy(LXPOS(15),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(16),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(15),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(16),LYPOS(13)); penguincount++;
 
 			//K
-			flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(19),LYPOS(16)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(20),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(21),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(22),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(20),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(21),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(22),LYPOS(11)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(21),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(22),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(22),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(21),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(22),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(22),LYPOS(16)); penguincount++;
 
 			//E
-			flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(24),LYPOS(16)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(25),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(26),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(25),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(26),LYPOS(11)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(25),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(26),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(25),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(26),LYPOS(13)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(25),LYPOS(16)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(26),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(25),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(26),LYPOS(16)); penguincount++;
 
 			//R
-			flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(12)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(14)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(14)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(28),LYPOS(16)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(29),LYPOS(11)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(30),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(29),LYPOS(11)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(30),LYPOS(11)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(29),LYPOS(13)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(30),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(29),LYPOS(13)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(30),LYPOS(13)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(12)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(12)); penguincount++;
 			
-			flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(14)); penguincount++;
- 			flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(15)); penguincount++;
-			flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(16)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(14)); penguincount++;
+ 			pg_flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(15)); penguincount++;
+			pg_flock[penguincount]=createpenguinxy(LXPOS(31),LYPOS(16)); penguincount++;
 
 			if (penguincount>=MAXPENGUINS) { fprintf(stderr,"Too many penguins!\n"); }
 
 			for (i=0;i<penguincount;i++)
 			{
-				savebehindpenguin(&flock[i]);
-				markgrid(flock[i].geom.x,flock[i].geom.y,BLOCKWIDTH,BLOCKHEIGHT,'*');	
-				drawpenguin(&flock[i]);
-				soil(flock[i].geom);
+				savebehindpenguin(&pg_flock[i]);
+				markgrid(pg_flock[i].geom.x,pg_flock[i].geom.y,BLOCKWIDTH,BLOCKHEIGHT,'*');	
+				drawpenguin(&pg_flock[i]);
+				soil(pg_flock[i].geom);
 			}
 			
 			
@@ -411,9 +411,9 @@ int intro(void)
 			frozen=false;
 			for (i=0;i<penguincount;i++)
 			{
-				markgrid(flock[i].geom.x,flock[i].geom.y,BLOCKWIDTH,BLOCKHEIGHT,' ');
-				erasepenguin(&flock[i]);
-				soil(flock[i].geom);
+				markgrid(pg_flock[i].geom.x,pg_flock[i].geom.y,BLOCKWIDTH,BLOCKHEIGHT,' ');
+				erasepenguin(&pg_flock[i]);
+				soil(pg_flock[i].geom);
 			}
 			letterstep++;
 			setcursor(CURSORCLICK);
@@ -427,10 +427,10 @@ int intro(void)
 			if (penguincount)
 			{
 				penguincount--;
-				markgrid(flock[penguincount].geom.x,flock[penguincount].geom.y,BLOCKWIDTH,BLOCKHEIGHT,' ');
-				erasepenguin(&flock[penguincount]);
-				soil(flock[penguincount].geom);
-				deletepenguin(&flock[penguincount]);
+				markgrid(pg_flock[penguincount].geom.x,pg_flock[penguincount].geom.y,BLOCKWIDTH,BLOCKHEIGHT,' ');
+				erasepenguin(&pg_flock[penguincount]);
+				soil(pg_flock[penguincount].geom);
+				deletepenguin(&pg_flock[penguincount]);
 			}
 			else
 			{
@@ -519,10 +519,10 @@ int intro(void)
 		{
 			for (i=0;i<penguincount;i+=2)
 			{
-				soil(flock[i].geom); // mark the penguin's old position as dirty
-				movepenguin(&flock[i]);
-				soil(flock[i].geom); // mark the penguin's new position as dirty too (it will be soon...)
-				savebehindpenguin(&flock[i]);
+				soil(pg_flock[i].geom); // mark the penguin's old position as dirty
+				movepenguin(&pg_flock[i]);
+				soil(pg_flock[i].geom); // mark the penguin's new position as dirty too (it will be soon...)
+				savebehindpenguin(&pg_flock[i]);
 			}
 		}
 		soil(tux.geom); // mark the penguin's old position as dirty
@@ -535,7 +535,7 @@ int intro(void)
 		{
 			for (i=0;i<penguincount;i+=2)
 			{
-				drawpenguin(&flock[i]);
+				drawpenguin(&pg_flock[i]);
 			}
 		}
 		drawpenguin(&tux);
@@ -548,7 +548,7 @@ int intro(void)
 		{
 			for (i=0;i<penguincount;i+=2)
 			{
-				erasepenguin(&flock[i]);
+				erasepenguin(&pg_flock[i]);
 			}
 		}
 		erasepenguin(&tux);
@@ -562,7 +562,7 @@ int intro(void)
 	while (penguincount)
 	{	
 		penguincount--;
-		deletepenguin(&flock[penguincount]);
+		deletepenguin(&pg_flock[penguincount]);
 	}
 	deletepenguin(&tux);
 
